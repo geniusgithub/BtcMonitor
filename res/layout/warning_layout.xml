@@ -146,6 +146,7 @@
 	        android:id="@+id/btn_save"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
+	        android:background="@drawable/selector_btn_white"
 	        android:layout_marginTop="20dp"
 	        android:text="保存" />
 			

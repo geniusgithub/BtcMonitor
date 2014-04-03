@@ -63,4 +63,5 @@
     <color name="window_bg">#fff0f3f6</color>
     <color name="button_unselected">#ff54acea</color>
     <color name="button_selected">#ff419de4</color>
+    <color name="royalblue">#4169E1</color>
 </resources>

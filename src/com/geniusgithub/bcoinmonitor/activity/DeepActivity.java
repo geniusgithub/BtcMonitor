@@ -66,16 +66,18 @@ public class DeepActivity extends FragmentActivity implements OnPageChangeListen
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+		MonitorApplication.onCatchError(this);
 		setupViews();
 		initData();
 
 	}
 	
-	
+
 	@Override
 	protected void onResume() {
 		super.onResume();
+		
+		MonitorApplication.onResume(this);
 		
 		boolean ret = CommonUtil.isNetworkConnect(this);
 		if (!ret){
@@ -83,6 +85,15 @@ public class DeepActivity extends FragmentActivity implements OnPageChangeListen
 			return ;
 		}
 	}
+	
+	@Override
+	protected void onPause() {
+		super.onPause();
+		
+		MonitorApplication.onPause(this);
+	}
+
+	
 
 	public void setupViews() {
 		setContentView(R.layout.deep_layout);

@@ -33,11 +33,25 @@ public class MainActivity extends TabActivity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		MonitorApplication.onCatchError(this);
 		setupViews();
 		initData();
 	}
+	
+	@Override
+	protected void onPause() {
+		super.onPause();
+		
+		MonitorApplication.onPause(this);
+	}
 
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+		MonitorApplication.onResume(this);
+	}
+	
 
 	public void setupViews() {
 		
@@ -102,6 +116,19 @@ public class MainActivity extends TabActivity{
 	
 	
 	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch(item.getItemId()){
+			case Menu.FIRST + 1:
+				exitProcess();
+				break;
+			case Menu.FIRST + 2:
+				runInBackground();
+				break;
+		}
+		return false;
+	}
+
 	@Override
 	public boolean onMenuItemSelected(int featureId, MenuItem item) {
 

@@ -1,6 +1,9 @@
 package com.geniusgithub.bcoinmonitor;
 
 
+import java.util.HashMap;
+
+import android.app.Activity;
 import android.app.Application;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -18,11 +21,12 @@ import com.geniusgithub.bcoinmonitor.model.IBCointType;
 import com.geniusgithub.bcoinmonitor.util.CommonLog;
 import com.geniusgithub.bcoinmonitor.util.LogFactory;
 import com.geniusgithub.bcoinmonitor.util.TipHelper;
+import com.tendcloud.tenddata.TCAgent;
 
 
 
 
-public class MonitorApplication extends Application implements IPriceObser{
+public class MonitorApplication extends Application implements IPriceObser, ItatisticsEvent{
 
 	private static final CommonLog log = LogFactory.createLog();
 	private static final int MSG_SHOW_PRICE_INTERVAL = 0x0001;
@@ -222,5 +226,35 @@ public class MonitorApplication extends Application implements IPriceObser{
 	private String getPfName(int type){
 		String[] names = getResources().getStringArray(R.array.platiform_name);
 		return names[type];
+	}
+
+
+	@Override
+	public void onEvent(String eventID) {
+		log.e("eventID = " + eventID);
+		
+		TCAgent.onEvent(this, eventID);
+	}
+
+	@Override
+	public void onEvent(String eventID, HashMap<String, String> map) {
+		log.e("eventID = " + eventID);
+	
+		TCAgent.onEvent(this, eventID, "", map);
+	}
+	
+	public static void onPause(Activity context){
+
+		TCAgent.onPause(context);
+	}
+	
+	public static void onResume(Activity context){
+	
+		TCAgent.onResume(context);
+	}
+	
+	public static void onCatchError(Context context){
+	
+		TCAgent.setReportUncaughtExceptions(true);
 	}
 }
