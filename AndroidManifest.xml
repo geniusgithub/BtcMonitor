@@ -1,0 +1,121 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.geniusgithub.bcoinmonitor"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="10" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.VIBRATE" /> 
+	<uses-permission android:name="android.permission.VIBRATE" />
+
+
+	
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:name=".MonitorApplication">
+        
+        <service android:name=".BackgroundService" android:enabled="true">
+		</service>
+		
+           
+        <activity
+            android:name=".test.test_activity"
+            android:label="@string/app_name" >
+<!--             <intent-filter> -->
+<!--                 <action android:name="android.intent.action.MAIN" /> -->
+<!--                 <category android:name="android.intent.category.LAUNCHER" /> -->
+<!--             </intent-filter> -->
+        </activity>
+     
+        <activity
+            android:name=".activity.WelcomActivity"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.NoTitleBar" >
+<!--             <intent-filter> -->
+<!--                 <action android:name="android.intent.action.MAIN" /> -->
+<!--                 <category android:name="android.intent.category.LAUNCHER" /> -->
+<!--             </intent-filter> -->
+        </activity>
+              
+
+        
+        <activity android:name=".activity.MarketActivity" 
+               android:theme="@android:style/Theme.NoTitleBar">
+            
+<!--             <intent-filter> -->
+<!--                 <action android:name="android.intent.action.MAIN" /> -->
+<!--                 <category android:name="android.intent.category.LAUNCHER" /> -->
+<!--             </intent-filter> -->
+            
+        </activity>
+        <activity android:name=".activity.DeepActivity" 
+               android:theme="@android:style/Theme.NoTitleBar">
+            
+<!--              <intent-filter> -->
+<!--                 <action android:name="android.intent.action.MAIN" /> -->
+<!--                 <category android:name="android.intent.category.LAUNCHER" /> -->
+<!--             </intent-filter> -->
+            
+        </activity>
+        <activity android:name=".activity.KLineActivity" 
+               android:theme="@android:style/Theme.NoTitleBar">
+            
+<!--               <intent-filter> -->
+<!--                 <action android:name="android.intent.action.MAIN" /> -->
+<!--                 <category android:name="android.intent.category.LAUNCHER" /> -->
+<!--               </intent-filter> -->
+            
+        </activity>
+        
+        
+        
+        <activity android:name=".activity.setting.SettingActivity"
+               android:theme="@android:style/Theme.NoTitleBar" >
+               
+<!--              <intent-filter>  -->
+<!--                 <action android:name="android.intent.action.MAIN" /> -->
+<!--                 <category android:name="android.intent.category.LAUNCHER" /> -->
+<!--               </intent-filter> -->
+        </activity>
+        
+        <activity android:name=".activity.setting.HelpActivity" 
+               android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        
+        <activity android:name=".activity.setting.AboutActivity" 
+               android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        
+         <activity android:name=".activity.setting.WarningActivity" 
+               android:theme="@android:style/Theme.NoTitleBar">
+<!--               <intent-filter>  -->
+<!--                 <action android:name="android.intent.action.MAIN" /> -->
+<!--                 <category android:name="android.intent.category.LAUNCHER" /> -->
+<!--               </intent-filter> -->
+        </activity>
+        
+    </application>
+
+</manifest>

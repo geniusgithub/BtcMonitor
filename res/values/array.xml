@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="platiform_name">
+        <item>BtcChina</item>
+        <item>OkCoin</item>
+        <item>火币网</item>
+    </string-array>   
+    
+    <string-array name="string_refresh_items">
+        <item>20秒</item>
+        <item>30秒</item>
+        <item>1分钟</item>
+    </string-array>
+    
+    
+    <integer-array name="int_refresh_items">
+        <item>20</item>
+        <item>30</item>
+        <item>60</item>    
+    </integer-array>
+    
+    
+    <string-array name="platiform_name_ex">
+        <item>不通知</item>
+        <item>BtcChina</item>
+        <item>OkCoin</item>
+        <item>火币网</item>
+    </string-array>   
+    
+        
+</resources>

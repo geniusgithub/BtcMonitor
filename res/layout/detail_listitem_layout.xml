@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="horizontal" android:paddingLeft="5dp" android:paddingRight="5dp" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="right|center" android:paddingTop="5dp" android:paddingBottom="5dp" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginRight="5dp" android:layout_weight="1.0" android:orientation="horizontal">
+    	<View android:id="@+id/v_buy_amount_empty" android:layout_width="0dp" android:layout_height="fill_parent" android:layout_weight="1"></View>
+        <View android:id="@+id/v_buy_amount" android:background="@drawable/point_red_bg" android:layout_width="0dp" android:layout_height="fill_parent" android:layout_weight="1"></View>
+    </LinearLayout>
+    <TextView android:textSize="12.0dip"  android:textColor="@color/grey" android:gravity="left" android:id="@+id/tv_buy_amount" android:layout_width="0.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" />
+    <TextView android:textSize="12.0dip"  android:textColor="@color/grey" android:gravity="left" android:id="@+id/tv_buy_price" android:background="#ffcccccc" android:layout_width="0.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" />
+    <TextView android:textSize="12.0dip"  android:textColor="@color/grey" android:gravity="left" android:id="@+id/tv_sell_price" android:background="#ffcccccc" android:layout_width="0.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" />
+    <TextView android:textSize="12.0dip"  android:textColor="@color/grey" android:gravity="left" android:id="@+id/tv_sell_amount" android:layout_width="0.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" />
+    <LinearLayout android:gravity="center_vertical"  android:paddingTop="5dp" android:paddingBottom="5dp" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" android:orientation="horizontal">
+		<View android:id="@+id/v_sell_amount" android:background="@drawable/point_green_bg" android:layout_width="0dp" android:layout_height="fill_parent" android:layout_weight="1"></View>
+		<View android:id="@+id/v_sell_amount_empty" android:layout_width="0dp" android:layout_height="fill_parent" android:layout_weight="1"></View>
+    </LinearLayout>
+</LinearLayout>

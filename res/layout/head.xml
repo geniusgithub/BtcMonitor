@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- ListView的头部 -->
+
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+ >
+  
+  <!-- 内容 -->
+  <RelativeLayout
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:id="@+id/head_contentLayout">
+  
+		  <!-- 箭头图像、进度条 -->
+		  <FrameLayout
+		  android:layout_width="wrap_content"
+		  android:layout_height="wrap_content"
+		  android:layout_alignParentLeft="true"
+		  android:layout_centerVertical="true"
+		  android:layout_marginLeft="30dp"
+		  android:layout_marginTop="10dp"
+		  android:layout_marginBottom="10dp"
+		  >
+				  
+				  <!-- 箭头 -->
+				  <ImageView
+				  android:layout_width="wrap_content"
+				  android:layout_height="wrap_content"
+				  android:layout_gravity="center"
+				  android:src="@drawable/arrow"
+				  android:id="@+id/head_arrowImageView"
+				  />
+				  
+				  <!-- 进度条 -->
+				  <ProgressBar 
+				  android:id="@+id/phead_progress"      
+ 		          android:layout_width="30dp"
+ 		          android:layout_height="30dp"
+ 		          android:layout_gravity="center"
+	              android:indeterminateDrawable="@drawable/head_progressbar"/>
+		  
+		  </FrameLayout>
+  
+		  <!-- 提示、最近更新 -->
+		  <LinearLayout
+		  android:layout_width="wrap_content"
+		  android:layout_height="wrap_content"
+		  android:layout_centerInParent="true"
+		  android:orientation="vertical"
+		  android:gravity="center_horizontal"
+		  android:layout_marginTop="10dp"
+		  android:layout_marginBottom="10dp"
+		  >
+		  
+				  <!-- 提示 -->
+				  <TextView
+				  android:id="@+id/head_tipsTextView"
+				  android:layout_width="wrap_content"
+				  android:layout_height="wrap_content"
+				  android:text="@string/xlistview_header_hint_normal"
+				  android:textColor="@color/black"
+				  android:textSize="13.0dip"
+				  />
+				  
+				  <!-- 最近更新 -->
+<!-- 				  <TextView -->
+<!-- 				  android:layout_width="wrap_content" -->
+<!-- 				  android:layout_height="wrap_content" -->
+<!-- 				  android:id="@+id/head_lastUpdatedTextView" -->
+<!-- 				  android:textColor="@color/red" -->
+<!-- 				  android:textSize="10sp" -->
+<!-- 				  /> -->
+		  
+		  </LinearLayout>
+  
+<!--   		 <View   -->
+<!--   		     android:layout_width="fill_parent" -->
+<!--   		     android:layout_height="1px"  -->
+<!--   		     android:background="@drawable/divider_line" -->
+<!--   		     android:layout_alignParentBottom="true"></View> -->
+  		 
+  		 
+  </RelativeLayout>
+  
+ 
+  
+</LinearLayout>

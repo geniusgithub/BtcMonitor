@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_width="fill_parent" android:layout_height="40dp" layout="@layout/top_home_layout" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/ad_layout" android:background="@drawable/summary_bg" android:paddingLeft="5dp" android:paddingRight="5dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="13.0dip" android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/txt_platform" android:textColor="@color/black" android:layout_weight="1.0" />
+        <TextView android:textSize="13.0dip" android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/txt_lastbusiness" android:textColor="@color/black" android:singleLine="true" android:layout_weight="1.0" />
+        <TextView android:textSize="13.0dip" android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/txt_buyone" android:textColor="@color/black" android:layout_weight="1.0" />
+        <TextView android:textSize="13.0dip" android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/txt_sellone" android:textColor="@color/black" android:layout_weight="1.0" />
+        <TextView android:textSize="13.0dip" android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/txt_businesscount" android:textColor="@color/black"  android:layout_weight="1.0" />
+    </LinearLayout>
+
+    <com.geniusgithub.bcoinmonitor.widget.RefreshListView 
+		android:id="@+id/market_list_view"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent" 
+        android:headerDividersEnabled="false" 
+        android:layout_weight="1.0"
+        android:dividerHeight="0.0dp" 
+        android:divider="@null"
+        android:cacheColorHint="#00000000" 
+        android:listSelector="@drawable/selector_content_item"/>
+    
+</LinearLayout>

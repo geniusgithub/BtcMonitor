@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                               xmlns:sat="http://schemas.android.com/apk/res/com.geniusgithub.lookaround"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:background="@drawable/default_homebg">
+
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+        <Button
+        android:id="@+id/btnChinaMarket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ChinaMarket" />
+
+        <Button
+        android:id="@+id/btnOCoinMarket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OCoinMarket" />
+
+     
+        <Button
+        android:id="@+id/btnFCoinMarket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FCoinMarket" />      
+        
+        
+        <Button
+        android:id="@+id/btnChinaDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ChinaDetail" />
+
+        <Button
+        android:id="@+id/btnOCoinDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OCoinDetail" />
+
+     
+        <Button
+        android:id="@+id/btnFCoinDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FCoinDetail" />     
+        
+        <Button
+        android:id="@+id/btnChinaTrade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ChinaTrade" />
+
+        <Button
+        android:id="@+id/btnOCoinTrade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OCoinTrade" />
+
+     
+        <Button
+        android:id="@+id/btnFCoinTrade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FCoinTrade" />   
+        
+    	<Spinner android:id="@+id/sp_warnplatiform"   
+        android:layout_width="fill_parent"  
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+    	 android:layout_marginRight="5dp">           
+        </Spinner>  
+			         
+        			         
+    </LinearLayout>
+
+    
+</RelativeLayout>
