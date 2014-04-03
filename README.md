@@ -16,9 +16,6 @@ Example screenshot below:
 
 ![github](http://img.my.csdn.net/uploads/201404/03/1396530475_7688.png "github")  
 
-![github](http://img.my.csdn.net/uploads/201312/30/1388390737_4580.png "github")  
-
-
 ![github](http://img.my.csdn.net/uploads/201404/03/1396530474_4440.png "github")  
 
 
