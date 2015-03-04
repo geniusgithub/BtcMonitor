@@ -58,6 +58,9 @@ public class MonitorApplication extends Application implements IPriceObser, Itat
 		super.onCreate();
 		log.e("MonitorApplication  onCreate!!!");
 		mInstance = this;
+		
+		  TCAgent.init(this);
+		  TCAgent.setReportUncaughtExceptions(true);
 		mConinMarketManager = ConinMarketManager.getInstance(this);
 		mConinMarketManager.registerPriceObser(this);
 		
