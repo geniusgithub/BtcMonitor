@@ -1,13 +1,29 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical"
+              android:background="@color/white"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:id="@+id/rootView"
+              xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_width="fill_parent" android:layout_height="40dp" layout="@layout/top_deep_layout" />
+    <LinearLayout android:orientation="horizontal" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:padding="5dp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textSize="13.0dip" android:textColor="@color/grey"  android:gravity="right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/txt_refresh" />
+            <TextView android:textSize="13.0dip" android:textColor="@color/black"  android:gravity="left" android:id="@+id/refresh_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dp"/>
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:padding="5dp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textSize="13.0dip" android:textColor="@color/grey" android:gravity="right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/txt_lastbusiness" />
+            <TextView android:textSize="13.0dip" android:textColor="@color/red" android:gravity="left" android:id="@+id/tv_last" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dp"/>
+        </LinearLayout>
+    </LinearLayout>
+    <RadioGroup android:id="@+id/main_radiogroup" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="40.0dip">
+        <RadioButton android:textSize="18.0dip" android:textColor="@color/black" android:gravity="center" android:id="@+id/rb_detail" android:background="@drawable/tab_detail_trade" android:layout_width="fill_parent" android:layout_height="fill_parent" android:checked="true" android:button="@null" android:text="@string/txt_detailinfo" android:layout_weight="1.0" />
+        <RadioButton android:textSize="18.0dip" android:textColor="@color/black" android:gravity="center" android:id="@+id/rb_trade" android:background="@drawable/tab_detail_trade" android:layout_width="fill_parent" android:layout_height="fill_parent" android:button="@null" android:text="@string/txt_lastbus2" android:layout_weight="1.0" />
+    </RadioGroup>
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="deep_fragment"
-        />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"/>
 
-</FrameLayout>
+</LinearLayout>
