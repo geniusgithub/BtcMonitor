@@ -35,6 +35,7 @@ If you want to add something that will require some for of persistence incl. per
 
 ### Links
 csdn blog : [http://blog.csdn.net/geniuseoe2012](http://blog.csdn.net/geniuseoe2012)<br /> 
+cnlog : [http://www.cnblogs.com/lance2016/](http://www.cnblogs.com/lance2016/)<br /> 
 
 
 ### Development
