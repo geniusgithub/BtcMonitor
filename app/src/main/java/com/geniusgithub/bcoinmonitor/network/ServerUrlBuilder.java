@@ -21,9 +21,9 @@ public class ServerUrlBuilder {
 	public static final String BTC_FIRE_COIN_TRADE = "https://www.huobi.com/market/huobi.php?a=trades";
 	
 	
-	public static final String BTC_CHINA_CHART = "http://www.btcte.com/chart/chbtc";
-	public static final String BTC_OK_COIN_CHART = "http://www.btcte.com/chart/okcoin";
-	public static final String BTC_FIRE_COIN_CHART = "http://www.btcte.com/chart/huobi";
+	public static final String BTC_CHINA_CHART = "http://www.btcc.com/chart/chbtc";
+	public static final String BTC_OK_COIN_CHART = "http://www.btcc.com/chart/okcoin";
+	public static final String BTC_FIRE_COIN_CHART = "http://www.btcc.com/chart/huobi";
 	
 	
 	public static String getMarket(int type){

@@ -1,12 +1,12 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string name="app_name">BtcMonitor</string>
-    
+
     <string name="main_market">行情</string>
     <string name="main_deep">深度</string>
     <string name="main_kline">K线</string>
     <string name="main_setting">设置</string>
-    
+
     <string name="txt_refresh">更新于 :</string>
     <string name="txt_platform">交易平台</string>
     <string name="txt_lastbusiness">最近成交价 :</string>
@@ -15,59 +15,62 @@
     <string name="txt_businesscount">成交量</string>
     <string name="txt_detail">委单量</string>
     <string name="txt_buyprice">买入价</string>
-    <string name="txt_sellprice">卖出价</string> 
+    <string name="txt_sellprice">卖出价</string>
     <string name="txt_businesstime">成交时间</string>
     <string name="txt_businessprice">成交价</string>
-    <string name="txt_businessamount">成交量</string> 
+    <string name="txt_businessamount">成交量</string>
     <string name="txt_detailinfo">委托信息</string>
     <string name="txt_lastbus2">最近成交</string>
-    
-    
+
+
     <string name="txt_marketinterval">行情刷新间隔</string>
-    <string name="txt_deepinterval">深度刷新间隔</string> 
-    <string name="txt_noteprice">通知栏显示价格</string>  
-    <string name="txt_warning">预警震动</string> 
-    <string name="txt_help">帮助</string> 
+    <string name="txt_deepinterval">深度刷新间隔</string>
+    <string name="txt_noteprice">通知栏显示价格</string>
+    <string name="txt_warning">预警震动</string>
+    <string name="txt_help">帮助</string>
     <string name="txt_checkupdate">检查更新</string>
-    <string name="txt_about">关于</string> 
-    
-    <string name="notify_title_compare">比特币网站价差警报</string> 
-    <string name="notify_title_newprice">比特币网站最新价格警报</string> 
-    <string name="notify_title_lastprice">比特币最新成交价</string> 
-       
+    <string name="txt_about">关于</string>
+
+    <string name="notify_title_compare">比特币网站价差警报</string>
+    <string name="notify_title_newprice">比特币网站最新价格警报</string>
+    <string name="notify_title_lastprice">比特币最新成交价</string>
+
     <string name="menu_exitprocess">退出程序</string>
-    <string name="menu_runinbackground">后台运行</string> 
-    
+    <string name="menu_runinbackground">后台运行</string>
+
     <string name="pf_btcchina">BtcChina</string>
     <string name="pf_okcoin">OkCoin</string>
     <string name="pf_firecoin">火币网</string>
-    
-    <string name="tvt_ver_pre">比特币大亨</string>    
+
+    <string name="tvt_ver_pre">比特币大亨</string>
     <string name="about_connect">新浪微博(android火星人)</string>
-      	
-      	
+
+
     <string name="xlistview_header_hint_normal">下拉刷新</string>
-    <string name="xlistview_header_hint_ready">松开刷新数据</string> 
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
     <string name="xlistview_header_hint_loading">正在加载...</string>
-    <string name="xlistview_header_last_time">上次更新时间：</string> 
-    <string name="xlistview_footer_hint_normal">查看更多</string> 
-    <string name="xlistview_footer_hint_ready">松开载入更多</string> 
-    <string name="xlistview_footer_hint_nodata">没有更多内容</string> 
-    <string name="toast_json_error">数据解析错误</string> 
-    <string name="toast_timeout_error">连接超时</string> 
-    <string name="toast_net_error">网络不可用,请检查您的网络</string> 
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+    <string name="xlistview_footer_hint_nodata">没有更多内容</string>
+    <string name="toast_json_error">数据解析错误</string>
+    <string name="toast_timeout_error">连接超时</string>
+    <string name="toast_net_error">网络不可用,请检查您的网络</string>
     <string name="toast_lastversion">当前已是最新版本</string>
-    <string name="toast_price_error">非法的价格区间</string>    
+    <string name="toast_price_error">非法的价格区间</string>
     <string name="toast_save_success">保存成功</string>
-    <string name="warn_explain">说明：当最新成交价低于或等于最低价 、高于或等于最高价时会发出警告.</string> 
-    
+    <string name="warn_explain">说明：当最新成交价低于或等于最低价 、高于或等于最高价时会发出警告.</string>
+
     <string name="about_bottom">Copyright @2014 BTCMonitor\nAll Rights Reserved</string>
-    <string name="help_warn">提示：\n1.因为需要频繁读取数据，消耗流量会较大，建议您只显示您需要的平台以节省您的流量和运行速度。\n 2.由于网络原因或者一些平台为防止DDOS攻击，可能导致数据无法获取。\n</string>  
+    <string name="help_warn">提示：\n1.因为需要频繁读取数据，消耗流量会较大，建议您只显示您需要的平台以节省您的流量和运行速度。\n 2.由于网络原因或者一些平台为防止DDOS攻击，可能导致数据无法获取。\n</string>
     <string name="about_content">比特币大亨是lance推出的一款APP, 致力于提供最新最全的比特币交易行情、比特币新闻资讯以及比特币教程等服务。</string>
 
 
-    <string name="permission_title" >提醒</string>
+    <string name="permission_title">提醒</string>
     <string name="permission_setting_guidedialog">比特币的<xliff:g id="permission">%s</xliff:g>被禁用，导致应用无法正常运行，请尝试进入权限管理，打开上述权限后，重新运行。</string>
-    <string name="permission_gosetting" >去设置</string>
-    <string name="permission_know" >知道了</string>
+    <string name="permission_gosetting">去设置</string>
+    <string name="permission_know">知道了</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
