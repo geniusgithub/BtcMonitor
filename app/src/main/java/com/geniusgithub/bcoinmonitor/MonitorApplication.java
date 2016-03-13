@@ -1,8 +1,6 @@
 package com.geniusgithub.bcoinmonitor;
 
 
-import java.util.HashMap;
-
 import android.app.Activity;
 import android.app.Application;
 import android.app.Notification;
@@ -22,6 +20,8 @@ import com.geniusgithub.bcoinmonitor.util.CommonLog;
 import com.geniusgithub.bcoinmonitor.util.LogFactory;
 import com.geniusgithub.bcoinmonitor.util.TipHelper;
 import com.tendcloud.tenddata.TCAgent;
+
+import java.util.HashMap;
 
 
 
@@ -204,9 +204,6 @@ public class MonitorApplication extends Application implements IPriceObser, Itat
 	
 	
 	private void sendNotifycation(String title, String content){
-		NotificationManager nm = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);               
-		Notification n = new Notification(R.drawable.icon, content, System.currentTimeMillis());             
-		n.flags = Notification.FLAG_AUTO_CANCEL;                
 		Intent i = new Intent(this, MainActivity.class);
 		i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);           
 		//PendingIntent
@@ -215,14 +212,19 @@ public class MonitorApplication extends Application implements IPriceObser, Itat
 		        R.string.app_name, 
 		        i, 
 		        PendingIntent.FLAG_UPDATE_CURRENT);
-		                 
-		n.setLatestEventInfo(
-				this,
-				title, 
-				content, 
-		        contentIntent);
-		nm.notify(R.string.app_name, n);
-		
+
+		Notification.Builder builder = new Notification.Builder(this);
+		builder.setContentTitle(title);
+		builder.setContentText(content);
+		builder.setContentIntent(contentIntent);
+		builder.setSmallIcon(R.drawable.icon);
+		builder.setWhen(System.currentTimeMillis());
+
+		Notification notification = builder.build();
+		notification.flags = Notification.FLAG_AUTO_CANCEL;
+		NotificationManager nm = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+		nm.notify(R.string.app_name, notification);
+
 		
 	}
 	

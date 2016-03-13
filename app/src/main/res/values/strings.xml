@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string name="app_name">BtcMonitor</string>
     
@@ -63,6 +63,11 @@
     
     <string name="about_bottom">Copyright @2014 BTCMonitor\nAll Rights Reserved</string>
     <string name="help_warn">提示：\n1.因为需要频繁读取数据，消耗流量会较大，建议您只显示您需要的平台以节省您的流量和运行速度。\n 2.由于网络原因或者一些平台为防止DDOS攻击，可能导致数据无法获取。\n</string>  
-    <string name="about_content">比特币大亨是lance推出的一款APP, 致力于提供最新最全的比特币交易行情、比特币新闻资讯以及比特币教程等服务。</string> 
+    <string name="about_content">比特币大亨是lance推出的一款APP, 致力于提供最新最全的比特币交易行情、比特币新闻资讯以及比特币教程等服务。</string>
 
+
+    <string name="permission_title" >提醒</string>
+    <string name="permission_setting_guidedialog">比特币的<xliff:g id="permission">%s</xliff:g>被禁用，导致应用无法正常运行，请尝试进入权限管理，打开上述权限后，重新运行。</string>
+    <string name="permission_gosetting" >去设置</string>
+    <string name="permission_know" >知道了</string>
 </resources>
