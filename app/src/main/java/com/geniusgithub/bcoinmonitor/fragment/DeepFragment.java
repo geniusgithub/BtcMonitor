@@ -1,7 +1,6 @@
 package com.geniusgithub.bcoinmonitor.fragment;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +8,7 @@ import android.view.ViewGroup;
 import com.geniusgithub.bcoinmonitor.R;
 
 
-public class DeepFragment extends Fragment {
+public class DeepFragment extends BaseFragment {
 
 
 

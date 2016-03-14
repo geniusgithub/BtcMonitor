@@ -6,9 +6,9 @@
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <RelativeLayout android:background="@drawable/top_bar_bg" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="fill_parent" android:layout_height="40dp">
+<!--    <RelativeLayout android:background="@drawable/top_bar_bg" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="fill_parent" android:layout_height="40dp">
         <TextView android:textSize="18sp" android:textColor="@android:color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/main_setting" android:layout_centerInParent="true"/>
-    </RelativeLayout>
+    </RelativeLayout>-->
 
 
     <ScrollView
