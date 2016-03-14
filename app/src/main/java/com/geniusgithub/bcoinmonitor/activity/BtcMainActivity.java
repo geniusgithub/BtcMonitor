@@ -68,21 +68,29 @@ public class BtcMainActivity extends AppCompatActivity {
 
     private void setupViewPager() {
         mTabLayout = (TabLayout) findViewById(R.id.tabs);
+        mTabLayout.setTabMode(TabLayout.MODE_FIXED);
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
         MainFragmentAdapter adapter = new MainFragmentAdapter(getSupportFragmentManager(), this, mTabLayout);
         mViewPager.setAdapter(adapter);
         mTabLayout.setupWithViewPager(mViewPager);
+        mTabLayout.setTabsFromPagerAdapter(adapter);
 
-        mTabMarket  = mTabLayout.newTab().setCustomView(newTabView(mResource.getString(R.string.main_market), mResource.getDrawable(R.drawable.tab_icon_new)));
+        mTabMarket  = mTabLayout.newTab();
         adapter.addTab(mTabMarket, MarketFragment.class, null);
-        mTabDeep  = mTabLayout.newTab().setCustomView(newTabView(mResource.getString(R.string.main_deep), mResource.getDrawable(R.drawable.tab_icon_explore)));
+        mTabDeep = mTabLayout.newTab();
         adapter.addTab(mTabDeep, DeepFragment.class, null);
-        mTabSetting  = mTabLayout.newTab().setCustomView(newTabView(mResource.getString(R.string.main_setting), mResource.getDrawable(R.drawable.tab_icon_me)));
+        mTabSetting = mTabLayout.newTab();
         adapter.addTab(mTabSetting, SettingFragment.class, null);
+        mTabMarket.setCustomView(newTabView(mResource.getString(R.string.main_market), mResource.getDrawable(R.drawable.tab_icon_new)));
+        mTabDeep.setCustomView(newTabView(mResource.getString(R.string.main_deep), mResource.getDrawable(R.drawable.tab_icon_explore)));
+        mTabSetting.setCustomView(newTabView(mResource.getString(R.string.main_setting), mResource.getDrawable(R.drawable.tab_icon_me)));
 
         mViewPager.setOnPageChangeListener(mOnPageChangeListener);
         mViewPager.setOffscreenPageLimit(mTabLayout.getTabCount());
         mTabLayout.setOnTabSelectedListener(mOnTabListener);
+
+
+
     }
 
     private View newTabView(String title, Drawable drawable){
@@ -96,7 +104,7 @@ public class BtcMainActivity extends AppCompatActivity {
 
     private class MainFragmentAdapter extends FragmentPagerAdapter{
 
-        private final ArrayList<TabInfo> mTabs = new ArrayList<TabInfo>(4);
+        private final ArrayList<TabInfo> mTabs = new ArrayList<TabInfo>(3);
         private final TabLayout mTabLayout;
         private final Context mContext;
         private FragmentManager mFragmentManager;
@@ -166,6 +174,9 @@ public class BtcMainActivity extends AppCompatActivity {
             return info.fragment;
         }
 
+
+
+
         private String makeFragmentName(int viewId, long id) {
             return "android:switcher:" + viewId + ":" + id;
         }
@@ -213,6 +224,7 @@ public class BtcMainActivity extends AppCompatActivity {
 
 
         public void onTabReselected(TabLayout.Tab tab){
+
 
         }
 

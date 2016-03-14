@@ -11,7 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"/>
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar"/>
 
     <LinearLayout
         android:id="@+id/main_content"
@@ -38,9 +40,8 @@
                 android:id="@+id/tabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="?android:attr/colorPrimary"
-                app:tabIndicatorHeight="0dp"
-                app:tabBackground="@color/white"/>
+                app:tabBackground="@color/white"
+                app:tabIndicatorColor="?attr/colorPrimary"/>
 
         </android.support.design.widget.AppBarLayout>
 
