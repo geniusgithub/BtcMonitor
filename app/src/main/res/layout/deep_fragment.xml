@@ -21,7 +21,7 @@
         <RadioButton android:textSize="18.0dip" android:textColor="@color/black" android:gravity="center" android:id="@+id/rb_trade" android:background="@drawable/tab_detail_trade" android:layout_width="fill_parent" android:layout_height="fill_parent" android:button="@null" android:text="@string/txt_lastbus2" android:layout_weight="1.0" />
     </RadioGroup>
 
-    <android.support.v4.view.ViewPager
+    <com.geniusgithub.bcoinmonitor.fragment.SubViewPager
         android:id="@+id/view_pager"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"/>

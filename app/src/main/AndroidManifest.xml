@@ -85,10 +85,10 @@
             android:name=".activity.WelcomActivity"
             android:label="@string/app_name" 
             android:theme="@android:style/Theme.NoTitleBar" >
- <!--           <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
         </activity>
 
 
@@ -96,10 +96,10 @@
             android:name=".activity.BtcMainActivity"
             android:label="@string/app_name"
             android:theme="@style/ActivityBaseTheme"  >
-            <intent-filter>
+<!--            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
 
         
@@ -112,28 +112,9 @@
 <!--                 <category android:name="android.intent.category.LAUNCHER" /> -->
 <!--             </intent-filter> -->
         </activity>
-              
 
-        
-        <activity android:name=".activity.MarketActivity" 
-               android:theme="@android:style/Theme.NoTitleBar">
-            
-<!--             <intent-filter> -->
-<!--                 <action android:name="android.intent.action.MAIN" /> -->
-<!--                 <category android:name="android.intent.category.LAUNCHER" /> -->
-<!--             </intent-filter> -->
-            
-        </activity>
-        <activity android:name=".activity.DeepActivity" 
-               android:theme="@android:style/Theme.NoTitleBar">
-            
-<!--              <intent-filter> -->
-<!--                 <action android:name="android.intent.action.MAIN" /> -->
-<!--                 <category android:name="android.intent.category.LAUNCHER" /> -->
-<!--             </intent-filter> -->
-            
-        </activity>
-        <activity android:name=".activity.KLineActivity" 
+
+        <activity android:name=".activity.KLineActivity"
                android:theme="@android:style/Theme.NoTitleBar">
             
 <!--               <intent-filter> -->

@@ -100,7 +100,7 @@ public class WelcomActivity extends BaseActivity{
 
 	private void goMainActivity(){
 		Intent intent = new Intent();
-		intent.setClass(this, MainActivity.class);
+		intent.setClass(this, BtcMainActivity.class);
 		startActivity(intent);
 		finish();
 	}

@@ -14,11 +14,16 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.geniusgithub.bcoinmonitor.MonitorApplication;
 import com.geniusgithub.bcoinmonitor.R;
+import com.geniusgithub.bcoinmonitor.datacenter.ConinDetailManager;
+import com.geniusgithub.bcoinmonitor.datacenter.ConinMarketManager;
 import com.geniusgithub.bcoinmonitor.fragment.DeepFragment;
 import com.geniusgithub.bcoinmonitor.fragment.MarketFragment;
 import com.geniusgithub.bcoinmonitor.fragment.SettingFragment;
@@ -40,6 +45,9 @@ public class BtcMainActivity extends AppCompatActivity {
     private TabLayout.Tab mTabDeep;
     private TabLayout.Tab mTabSetting;
 
+    private ConinMarketManager mMarketManager;
+    private ConinDetailManager mDetailManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,8 +55,55 @@ public class BtcMainActivity extends AppCompatActivity {
         mContext = this;
         mResource = mContext.getResources();
         initView();
+        initData();
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        MonitorApplication.onPause(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        MonitorApplication.onResume(this);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        menu.add(Menu.NONE, Menu.FIRST + 1, 1, getResources().getString(R.string.menu_exitprocess));
+        menu.add(Menu.NONE, Menu.FIRST + 2, 2, getResources().getString(R.string.menu_runinbackground));
+
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()){
+            case Menu.FIRST + 1:
+                exitProcess();
+                break;
+            case Menu.FIRST + 2:
+                runInBackground();
+                break;
+        }
+        return false;
+    }
+
+    private void exitProcess(){
+        finish();
+        MonitorApplication.getInstance().exitProcess();
+    }
+
+    private void runInBackground(){
+        finish();
+    }
 
     private void initView(){
         initToolBar();
@@ -56,6 +111,16 @@ public class BtcMainActivity extends AppCompatActivity {
 
     }
 
+    public void initData() {
+
+        MonitorApplication.getInstance().setStatus(true);
+
+        mMarketManager = ConinMarketManager.getInstance(MonitorApplication.getInstance());
+        mMarketManager.startRequestTimer();
+
+        mDetailManager = ConinDetailManager.getInstance(MonitorApplication.getInstance());
+        mDetailManager.startRequestTimer();
+    }
 
 
     private void initToolBar(){
@@ -100,6 +165,8 @@ public class BtcMainActivity extends AppCompatActivity {
         titleView.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null);
         return view;
     }
+
+
 
 
     private class MainFragmentAdapter extends FragmentPagerAdapter{

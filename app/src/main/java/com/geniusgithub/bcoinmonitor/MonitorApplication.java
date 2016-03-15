@@ -11,7 +11,8 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 
-import com.geniusgithub.bcoinmonitor.activity.MainActivity;
+
+import com.geniusgithub.bcoinmonitor.activity.BtcMainActivity;
 import com.geniusgithub.bcoinmonitor.datacenter.ConinMarketManager;
 import com.geniusgithub.bcoinmonitor.datacenter.IPriceObser;
 import com.geniusgithub.bcoinmonitor.datastore.LocalConfigSharePreference;
@@ -204,7 +205,7 @@ public class MonitorApplication extends Application implements IPriceObser, Itat
 	
 	
 	private void sendNotifycation(String title, String content){
-		Intent i = new Intent(this, MainActivity.class);
+		Intent i = new Intent(this, BtcMainActivity.class);
 		i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);           
 		//PendingIntent
 		PendingIntent contentIntent = PendingIntent.getActivity(

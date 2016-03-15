@@ -1,3 +1,4 @@
+/*
 package com.geniusgithub.bcoinmonitor.activity;
 
 
@@ -175,3 +176,4 @@ public class MainActivity extends TabActivity{
 	}
 	
 }
+*/
