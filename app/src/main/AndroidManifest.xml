@@ -123,19 +123,9 @@
 <!--               </intent-filter> -->
             
         </activity>
-        
-        
-        
-        <activity android:name=".activity.setting.SettingActivity"
-               android:theme="@android:style/Theme.NoTitleBar" >
-               
-<!--              <intent-filter>  -->
-<!--                 <action android:name="android.intent.action.MAIN" /> -->
-<!--                 <category android:name="android.intent.category.LAUNCHER" /> -->
-<!--               </intent-filter> -->
-        </activity>
-        
-        <activity android:name=".activity.setting.HelpActivity" 
+
+
+        <activity android:name=".activity.setting.HelpActivity"
                android:theme="@android:style/Theme.NoTitleBar">
         </activity>
         
