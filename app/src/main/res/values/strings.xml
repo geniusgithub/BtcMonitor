@@ -2,10 +2,11 @@
 
     <string name="app_name">BtcMonitor</string>
 
-    <string name="main_market">行情</string>
-    <string name="main_deep">深度</string>
+    <string name="main_market">实时行情</string>
+    <string name="main_deep">市场深度</string>
     <string name="main_kline">K线</string>
     <string name="main_setting">设置</string>
+    <string name="main_more">更多</string>
 
     <string name="txt_refresh">更新于 :</string>
     <string name="txt_platform">交易平台</string>
@@ -22,7 +23,10 @@
     <string name="txt_detailinfo">委托信息</string>
     <string name="txt_lastbus2">最近成交</string>
 
-
+    <string name="txt_share">分享</string>
+    <string name="txt_scan">扫一扫</string>
+    <string name="txt_setting">设置</string>
+    <string name="txt_advise">意见与反馈</string>
     <string name="txt_marketinterval">行情刷新间隔</string>
     <string name="txt_deepinterval">深度刷新间隔</string>
     <string name="txt_noteprice">通知栏显示价格</string>
@@ -30,6 +34,7 @@
     <string name="txt_help">帮助</string>
     <string name="txt_checkupdate">检查更新</string>
     <string name="txt_about">关于</string>
+    <string name="txt_exit">退出</string>
 
     <string name="notify_title_compare">比特币网站价差警报</string>
     <string name="notify_title_newprice">比特币网站最新价格警报</string>

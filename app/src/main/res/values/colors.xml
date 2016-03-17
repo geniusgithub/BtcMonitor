@@ -2,6 +2,7 @@
 <resources>
     <color name="window_background">#FFF5F5F5</color>
 
+
     <color name="white">#ffffffff</color>
     <color name="black">#ff000000</color>
     <color name="blue">#ffccddff</color>
@@ -9,7 +10,7 @@
     <color name="grey">#ff58616d</color>
     <color name="darkgrey">#ff404040</color>
     <color name="toasterro">#ff9fd524</color>
-    <color name="lightgrey">#ff888888</color>
+    <color name="lightgrey">#ffcccccc</color>
     <color name="semitransparent">#80000000</color>
     <color name="lightransparent">#a0000000</color>
     <color name="transparent">#00000000</color>
@@ -64,6 +65,6 @@
     <color name="shape_line">#ffcccccc</color>
     <color name="window_bg">#fff0f3f6</color>
     <color name="button_unselected">#ff54acea</color>
-    <color name="button_selected">#ff419de4</color>
+    <color name="button_selected">@color/lightgrey</color>
     <color name="royalblue">#4169E1</color>
 </resources>

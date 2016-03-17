@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="@color/white"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    <RelativeLayout android:background="@drawable/top_bar_bg" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="fill_parent" android:layout_height="40dp">
+        <TextView android:textSize="18sp" android:textColor="@android:color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/main_setting" android:layout_centerInParent="true"/>
+    </RelativeLayout>-->
+
+
+    <ScrollView
+        android:scrollbarThumbVertical="@drawable/scrollbar_handle_vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:visibility="visible"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                style="@style/leba_bg_layout">
+                <!--  分享	-->
+                <LinearLayout
+                    android:id="@+id/ll_market"
+                    style="@style/leba_bg_top_layout">
+                    <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="@string/txt_share" android:layout_weight="1.0" />
+                    <TextView android:id="@+id/tv_market_interval" android:textColor="@color/grey" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" />
+                </LinearLayout>
+
+                <View android:background="@drawable/leba_shape_line" android:layout_width="fill_parent" android:layout_height="1.0px" />
+
+                <!--  扫一扫	-->
+                <LinearLayout
+                    android:id="@+id/ll_warning"
+                    style="@style/leba_bg_bottom_layout">
+                    <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="@string/txt_scan" android:layout_weight="1.0" />
+
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:src="@drawable/setting_arrow"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/leba_bg_layout">
+
+                <!-- 设置  -->
+                <LinearLayout
+                    android:id="@+id/ll_about"
+                    style="@style/leba_bg_single_layout">
+                    <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="@string/txt_setting" android:layout_weight="1.0" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:src="@drawable/setting_arrow"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/leba_bg_layout">
+
+                <!--  意见与反馈	-->
+                <LinearLayout
+                    android:id="@+id/ll_market"
+                    style="@style/leba_bg_top_layout">
+                    <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="@string/txt_advise" android:layout_weight="1.0" />
+                    <TextView android:id="@+id/tv_market_interval" android:textColor="@color/grey" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" />
+                </LinearLayout>
+
+                <View android:background="@drawable/leba_shape_line" android:layout_width="fill_parent" android:layout_height="1.0px" />
+
+
+                <!-- 关于  -->
+                <LinearLayout
+                    android:id="@+id/ll_about"
+                    style="@style/leba_bg_bottom_layout">
+                    <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="@string/txt_about" android:layout_weight="1.0" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:src="@drawable/setting_arrow"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/btn_exit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/txt_exit"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
+

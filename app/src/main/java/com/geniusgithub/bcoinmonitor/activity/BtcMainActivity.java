@@ -26,6 +26,7 @@ import com.geniusgithub.bcoinmonitor.datacenter.ConinDetailManager;
 import com.geniusgithub.bcoinmonitor.datacenter.ConinMarketManager;
 import com.geniusgithub.bcoinmonitor.fragment.DeepFragment;
 import com.geniusgithub.bcoinmonitor.fragment.MarketFragment;
+import com.geniusgithub.bcoinmonitor.fragment.MeFragment;
 import com.geniusgithub.bcoinmonitor.fragment.SettingFragment;
 import com.geniusgithub.bcoinmonitor.util.CommonLog;
 import com.geniusgithub.bcoinmonitor.util.LogFactory;
@@ -145,10 +146,10 @@ public class BtcMainActivity extends AppCompatActivity {
         mTabDeep = mTabLayout.newTab();
         adapter.addTab(mTabDeep, DeepFragment.class, null);
         mTabSetting = mTabLayout.newTab();
-        adapter.addTab(mTabSetting, SettingFragment.class, null);
+        adapter.addTab(mTabSetting, MeFragment.class, null);
         mTabMarket.setCustomView(newTabView(mResource.getString(R.string.main_market), mResource.getDrawable(R.drawable.tab_icon_new)));
         mTabDeep.setCustomView(newTabView(mResource.getString(R.string.main_deep), mResource.getDrawable(R.drawable.tab_icon_explore)));
-        mTabSetting.setCustomView(newTabView(mResource.getString(R.string.main_setting), mResource.getDrawable(R.drawable.tab_icon_me)));
+        mTabSetting.setCustomView(newTabView(mResource.getString(R.string.main_more), mResource.getDrawable(R.drawable.tab_icon_me)));
 
         mViewPager.setOnPageChangeListener(mOnPageChangeListener);
         mViewPager.setOffscreenPageLimit(mTabLayout.getTabCount());
