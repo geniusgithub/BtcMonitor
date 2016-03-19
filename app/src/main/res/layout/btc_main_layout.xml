@@ -11,7 +11,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"/>
+        android:minHeight="?attr/actionBarSize"
+        android:title="">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_toolbartitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:text="BTC"
+                android:textColor="@color/white"
+                android:textSize="25dp"/>
+
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.Toolbar>
 
     <LinearLayout
         android:id="@+id/main_content"

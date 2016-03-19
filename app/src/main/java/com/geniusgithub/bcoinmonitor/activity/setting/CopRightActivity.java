@@ -9,7 +9,7 @@ import android.view.View.OnClickListener;
 import com.geniusgithub.bcoinmonitor.R;
 import com.geniusgithub.bcoinmonitor.activity.BaseActivity;
 
-public class HelpActivity extends BaseActivity  implements OnClickListener{
+public class CopRightActivity extends BaseActivity  implements OnClickListener{
 
 	
 	@Override
@@ -21,14 +21,14 @@ public class HelpActivity extends BaseActivity  implements OnClickListener{
 	
 	@Override
 	public void setupViews() {
-		setContentView(R.layout.help_layout);
-		initToolBar();;
-
+		setContentView(R.layout.copyright_layout);
+		initToolBar();
+	
 	}
 
 	private void initToolBar(){
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-		toolbar.setTitle("Help");
+		toolbar.setTitle("CopyRight");
 		toolbar.setTitleTextColor(Color.parseColor("#ffffff"));
 		setSupportActionBar(toolbar);
 	}

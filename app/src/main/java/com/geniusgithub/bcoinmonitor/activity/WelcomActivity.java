@@ -1,5 +1,6 @@
 package com.geniusgithub.bcoinmonitor.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,7 +13,7 @@ import com.geniusgithub.bcoinmonitor.util.CommonLog;
 import com.geniusgithub.bcoinmonitor.util.CommonUtil;
 import com.geniusgithub.bcoinmonitor.util.LogFactory;
 
-public class WelcomActivity extends BaseActivity{
+public class WelcomActivity extends Activity{
 
 	private static final CommonLog log = LogFactory.createLog();
 	
@@ -29,17 +30,15 @@ public class WelcomActivity extends BaseActivity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-
+		setupViews();
+		initData();
 	}
-	
-	@Override
+
+
 	public void setupViews() {
 		setContentView(R.layout.welcome_layout);
 	}
 
-
-
-	@Override
 	public void initData() {
 		mApplication = MonitorApplication.getInstance();	
 		if (mApplication.getEnterFlag()){
@@ -70,8 +69,6 @@ public class WelcomActivity extends BaseActivity{
 		boolean ret = CommonUtil.isNetworkConnect(this);
 		if (!ret){
 			CommonUtil.showToast(R.string.toast_net_error, this);
-			mHandler.sendEmptyMessageDelayed(EXIT_MSG_ID, 2000);
-			return ;
 		}
 		
 		mHandler.sendEmptyMessageDelayed(SEND_MSG_ID, 2000);
@@ -100,7 +97,6 @@ public class WelcomActivity extends BaseActivity{
 
 
 	private void goMainActivity(){
-		log.i("goMainActivity");
 		Intent intent = new Intent();
 		intent.setClass(this, BtcMainActivity.class);
 		startActivity(intent);

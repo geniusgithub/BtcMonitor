@@ -89,6 +89,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="30dp"
+                android:textSize="20.0dip"
                 android:text="@string/txt_exit"/>
 
         </LinearLayout>

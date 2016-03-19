@@ -144,6 +144,10 @@
 <!--                 <category android:name="android.intent.category.LAUNCHER" /> -->
 <!--               </intent-filter> -->
         </activity>
+
+        <activity android:name=".activity.setting.CopRightActivity"
+                  android:theme="@style/ActivityBaseTheme" >
+        </activity>
         
     </application>
 

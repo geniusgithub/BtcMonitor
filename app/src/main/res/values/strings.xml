@@ -31,10 +31,11 @@
     <string name="txt_deepinterval">深度刷新间隔</string>
     <string name="txt_noteprice">通知栏显示价格</string>
     <string name="txt_warning">预警震动</string>
-    <string name="txt_help">帮助</string>
+    <string name="txt_help">使用帮助</string>
     <string name="txt_checkupdate">检查更新</string>
+    <string name="txt_copyright">版权信息</string>
     <string name="txt_about">关于</string>
-    <string name="txt_exit">退出</string>
+    <string name="txt_exit">退  出</string>
 
     <string name="notify_title_compare">比特币网站价差警报</string>
     <string name="notify_title_newprice">比特币网站最新价格警报</string>

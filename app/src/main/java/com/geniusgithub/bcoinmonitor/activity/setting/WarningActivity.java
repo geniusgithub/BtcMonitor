@@ -204,7 +204,6 @@ public class WarningActivity extends BaseActivity  implements OnClickListener{
 	@Override
 	public void onClick(View view) {
 		switch(view.getId()){
-				break;
 			case R.id.btn_save:
 				save();
 				break;

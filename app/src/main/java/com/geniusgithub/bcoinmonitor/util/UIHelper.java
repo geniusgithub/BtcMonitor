@@ -8,6 +8,8 @@ import com.geniusgithub.bcoinmonitor.activity.AdviseActivity;
 import com.geniusgithub.bcoinmonitor.activity.ScanActivity;
 import com.geniusgithub.bcoinmonitor.activity.SettingActivity;
 import com.geniusgithub.bcoinmonitor.activity.ShareActivity;
+import com.geniusgithub.bcoinmonitor.activity.setting.CopRightActivity;
+import com.geniusgithub.bcoinmonitor.activity.setting.HelpActivity;
 import com.geniusgithub.bcoinmonitor.activity.setting.WarningActivity;
 
 public class UIHelper {
@@ -44,6 +46,18 @@ public class UIHelper {
     public static void openWarnInterface(Context context){
         Intent intent = new Intent();
         intent.setClass(context, WarningActivity.class);
+        context.startActivity(intent);
+    }
+
+    public static void openCopyRightInterface(Context context){
+        Intent intent = new Intent();
+        intent.setClass(context, CopRightActivity.class);
+        context.startActivity(intent);
+    }
+
+    public static void openHelpInterface(Context context){
+        Intent intent = new Intent();
+        intent.setClass(context, HelpActivity.class);
         context.startActivity(intent);
     }
 }

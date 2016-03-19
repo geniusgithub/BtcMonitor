@@ -19,7 +19,6 @@ import com.geniusgithub.bcoinmonitor.datacenter.ConinDetailManager;
 import com.geniusgithub.bcoinmonitor.datacenter.ConinTradeManager;
 import com.geniusgithub.bcoinmonitor.model.IBCointType;
 import com.geniusgithub.bcoinmonitor.util.CommonLog;
-import com.geniusgithub.bcoinmonitor.util.CommonUtil;
 import com.geniusgithub.bcoinmonitor.util.LogFactory;
 import com.geniusgithub.bcoinmonitor.util.TimeUtil;
 import com.geniusgithub.bcoinmonitor.widget.spinner.AbstractSpinerAdapter;
@@ -31,7 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class DeepFragment extends BaseFragment implements ViewPager.OnPageChangeListener, View.OnClickListener {
+public class DeepFragment extends BtcMainBaseFragment implements ViewPager.OnPageChangeListener, View.OnClickListener {
 
     private static final CommonLog log = LogFactory.createLog();
     private static final int REFRESH_DETAIL_DATA = 0x0001;
@@ -63,6 +62,30 @@ public class DeepFragment extends BaseFragment implements ViewPager.OnPageChange
     public DeepFragment() {
         // Required empty public constructor
     }
+
+    private void updateToolbarTitle(){
+        if (isEnter){
+            setToolbarTitle("DEEP");
+        }
+    }
+
+    @Override
+    public   void onTabSelected(){
+        super.onTabSelected();
+        log.i("DeepFragment onTabSelected");
+        updateToolbarTitle();
+    }
+
+    @Override
+    public  void onTabUnselected(){
+        super.onTabUnselected();
+    }
+
+    @Override
+    public  void onTabReselected(){
+        super.onTabReselected();
+    }
+
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -90,11 +113,7 @@ public class DeepFragment extends BaseFragment implements ViewPager.OnPageChange
     public void onResume() {
         super.onResume();
 
-        boolean ret = CommonUtil.isNetworkConnect(mContext);
-        if (!ret){
-            CommonUtil.showToast(R.string.toast_net_error, mContext);
-            return ;
-        }
+        updateToolbarTitle();
     }
 
     @Override

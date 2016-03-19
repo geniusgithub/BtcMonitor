@@ -8,13 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.geniusgithub.bcoinmonitor.MonitorApplication;
 import com.geniusgithub.bcoinmonitor.R;
 import com.geniusgithub.bcoinmonitor.util.CommonLog;
 import com.geniusgithub.bcoinmonitor.util.LogFactory;
 import com.geniusgithub.bcoinmonitor.util.UIHelper;
 
 
-public class MeFragment extends BaseFragment implements View.OnClickListener {
+public class MeFragment extends BtcMainBaseFragment implements View.OnClickListener {
 
     private static final CommonLog log = LogFactory.createLog();
     private Context mContext;
@@ -32,6 +33,29 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
 
     public MeFragment() {
         // Required empty public constructor
+    }
+
+    private void updateToolbarTitle(){
+        if (isEnter){
+            setToolbarTitle("SETTING");
+        }
+    }
+
+    @Override
+    public   void onTabSelected(){
+        super.onTabSelected();
+        updateToolbarTitle();
+    }
+
+    @Override
+    public  void onTabUnselected(){
+        super.onTabUnselected();
+    }
+
+    @Override
+    public  void onTabReselected(){
+        super.onTabReselected();
+
     }
 
     @Override
@@ -64,11 +88,36 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
         initData();
     }
 
+    public void setupViews(View view) {
+        ll_shareView = view.findViewById(R.id.ll_shapre);
+        ll_scanView = view.findViewById(R.id.ll_scan);
+        ll_setView = view.findViewById(R.id.ll_setting);
+        ll_adviseView = view.findViewById(R.id.ll_advise);
+        ll_aboutView = view.findViewById(R.id.ll_about);
+
+
+        ll_shareView.setOnClickListener(this);
+        ll_scanView.setOnClickListener(this);
+        ll_setView.setOnClickListener(this);
+        ll_adviseView.setOnClickListener(this);
+        ll_aboutView.setOnClickListener(this);
+
+        mBtnExit = (Button)view.findViewById(R.id.btn_exit);
+
+        mBtnExit.setOnClickListener(this);
+
+    }
+
+
+    public void initData() {
+
+    }
 
     @Override
     public void onResume() {
         super.onResume();
 
+        updateToolbarTitle();
 
     }
 
@@ -102,35 +151,19 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
             case R.id.ll_about:
                 UIHelper.openAboutInterface(mContext);
                 break;
+            case R.id.btn_exit:
+                exitProcess();
+                break;
+
         }
 
     }
 
 
-    public void setupViews(View view) {
-        ll_shareView = view.findViewById(R.id.ll_shapre);
-        ll_scanView = view.findViewById(R.id.ll_scan);
-        ll_setView = view.findViewById(R.id.ll_setting);
-        ll_adviseView = view.findViewById(R.id.ll_advise);
-        ll_aboutView = view.findViewById(R.id.ll_about);
 
 
-        ll_shareView.setOnClickListener(this);
-        ll_scanView.setOnClickListener(this);
-        ll_setView.setOnClickListener(this);
-        ll_adviseView.setOnClickListener(this);
-        ll_aboutView.setOnClickListener(this);
-
-        mBtnExit = (Button)view.findViewById(R.id.btn_exit);
-
-        mBtnExit.setOnClickListener(this);
-
+    private void exitProcess(){
+        getActivity().finish();
+        MonitorApplication.getInstance().exitProcess();
     }
-
-
-    public void initData() {
-
-    }
-
-
 }

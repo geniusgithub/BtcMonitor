@@ -6,7 +6,6 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -15,8 +14,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -25,6 +22,7 @@ import com.geniusgithub.bcoinmonitor.MonitorApplication;
 import com.geniusgithub.bcoinmonitor.R;
 import com.geniusgithub.bcoinmonitor.datacenter.ConinDetailManager;
 import com.geniusgithub.bcoinmonitor.datacenter.ConinMarketManager;
+import com.geniusgithub.bcoinmonitor.fragment.BtcMainBaseFragment;
 import com.geniusgithub.bcoinmonitor.fragment.DeepFragment;
 import com.geniusgithub.bcoinmonitor.fragment.MarketFragment;
 import com.geniusgithub.bcoinmonitor.fragment.MeFragment;
@@ -34,7 +32,7 @@ import com.geniusgithub.bcoinmonitor.util.LogFactory;
 import java.util.ArrayList;
 
 
-public class BtcMainActivity extends AppCompatActivity {
+public class BtcMainActivity extends AppCompatActivity implements  BtcMainBaseFragment.IToolbarEvent{
     private static final CommonLog log = LogFactory.createLog();
 
     private Context mContext;
@@ -46,6 +44,9 @@ public class BtcMainActivity extends AppCompatActivity {
     private TabLayout.Tab mTabDeep;
     private TabLayout.Tab mTabSetting;
 
+    private MainFragmentAdapter mainFragmentAdapter;
+    private Toolbar mToolbar;
+    private TextView mToolbarTitle;
     private ConinMarketManager mMarketManager;
     private ConinDetailManager mDetailManager;
 
@@ -73,37 +74,8 @@ public class BtcMainActivity extends AppCompatActivity {
         MonitorApplication.onResume(this);
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        menu.add(Menu.NONE, Menu.FIRST + 1, 1, getResources().getString(R.string.menu_exitprocess));
-        menu.add(Menu.NONE, Menu.FIRST + 2, 2, getResources().getString(R.string.menu_runinbackground));
-
-        return true;
-    }
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()){
-            case Menu.FIRST + 1:
-                exitProcess();
-                break;
-            case Menu.FIRST + 2:
-                runInBackground();
-                break;
-        }
-        return false;
-    }
-
-    private void exitProcess(){
-        finish();
-        MonitorApplication.getInstance().exitProcess();
-    }
-
-    private void runInBackground(){
-        finish();
+    public void setToolbarTitle(String title){
+        mToolbarTitle.setText(title);
     }
 
     private void initView(){
@@ -125,10 +97,9 @@ public class BtcMainActivity extends AppCompatActivity {
 
 
     private void initToolBar(){
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("BTC");
-        toolbar.setTitleTextColor(Color.parseColor("#ffffff"));
-        setSupportActionBar(toolbar);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+        mToolbarTitle = (TextView)mToolbar.findViewById(R.id.tv_toolbartitle);
     }
 
 
@@ -136,17 +107,17 @@ public class BtcMainActivity extends AppCompatActivity {
         mTabLayout = (TabLayout) findViewById(R.id.tabs);
         mTabLayout.setTabMode(TabLayout.MODE_FIXED);
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
-        MainFragmentAdapter adapter = new MainFragmentAdapter(getFragmentManager(), this, mTabLayout);
-        mViewPager.setAdapter(adapter);
+        mainFragmentAdapter = new MainFragmentAdapter(getFragmentManager(), this, mTabLayout);
+        mViewPager.setAdapter(mainFragmentAdapter);
         mTabLayout.setupWithViewPager(mViewPager);
-        mTabLayout.setTabsFromPagerAdapter(adapter);
+        mTabLayout.setTabsFromPagerAdapter(mainFragmentAdapter);
 
         mTabMarket  = mTabLayout.newTab();
-        adapter.addTab(mTabMarket, MarketFragment.class, null);
+        mainFragmentAdapter.addTab(mTabMarket, MarketFragment.class, null);
         mTabDeep = mTabLayout.newTab();
-        adapter.addTab(mTabDeep, DeepFragment.class, null);
+        mainFragmentAdapter.addTab(mTabDeep, DeepFragment.class, null);
         mTabSetting = mTabLayout.newTab();
-        adapter.addTab(mTabSetting, MeFragment.class, null);
+        mainFragmentAdapter.addTab(mTabSetting, MeFragment.class, null);
         mTabMarket.setCustomView(newTabView(mResource.getString(R.string.main_market), mResource.getDrawable(R.drawable.tab_icon_new)));
         mTabDeep.setCustomView(newTabView(mResource.getString(R.string.main_deep), mResource.getDrawable(R.drawable.tab_icon_explore)));
         mTabSetting.setCustomView(newTabView(mResource.getString(R.string.main_more), mResource.getDrawable(R.drawable.tab_icon_me)));
@@ -156,7 +127,8 @@ public class BtcMainActivity extends AppCompatActivity {
         mTabLayout.setOnTabSelectedListener(mOnTabListener);
 
 
-
+        mTabLayout.getTabAt(0).select();
+        mTabLayout.getTabAt(0).getCustomView().setSelected(true);
     }
 
     private View newTabView(String title, Drawable drawable){
@@ -166,8 +138,6 @@ public class BtcMainActivity extends AppCompatActivity {
         titleView.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null);
         return view;
     }
-
-
 
 
     private class MainFragmentAdapter extends FragmentPagerAdapter {
@@ -282,18 +252,23 @@ public class BtcMainActivity extends AppCompatActivity {
     private TabLayout.OnTabSelectedListener mOnTabListener = new TabLayout.OnTabSelectedListener(){
 
         public void onTabSelected(TabLayout.Tab tab){
-
+            log.i("onTabSelected pos = " + tab.getPosition());
             mViewPager.setCurrentItem(tab.getPosition());
+            BtcMainBaseFragment fragment = (BtcMainBaseFragment)mainFragmentAdapter.getItem(tab.getPosition());
+            fragment.onTabSelected();
         }
 
         public void onTabUnselected(TabLayout.Tab tab){
-
+            log.i("onTabUnselected pos = " + tab.getPosition());
+            BtcMainBaseFragment fragment = (BtcMainBaseFragment)mainFragmentAdapter.getItem(tab.getPosition());
+            fragment.onTabUnselected();
         }
 
 
         public void onTabReselected(TabLayout.Tab tab){
-
-
+            log.i("onTabReselected pos = " + tab.getPosition());
+            BtcMainBaseFragment fragment = (BtcMainBaseFragment)mainFragmentAdapter.getItem(tab.getPosition());
+            fragment.onTabReselected();
         }
 
     };

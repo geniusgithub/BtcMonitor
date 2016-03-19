@@ -14,14 +14,13 @@ import com.geniusgithub.bcoinmonitor.R;
 import com.geniusgithub.bcoinmonitor.adapter.MarketListViewAdapter;
 import com.geniusgithub.bcoinmonitor.datacenter.ConinMarketEx;
 import com.geniusgithub.bcoinmonitor.datacenter.ConinMarketManager;
-import com.geniusgithub.bcoinmonitor.util.CommonUtil;
 import com.geniusgithub.bcoinmonitor.util.TimeUtil;
 import com.geniusgithub.bcoinmonitor.widget.RefreshListView;
 
 import java.util.List;
 
 
-public class MarketFragment extends BaseFragment implements RefreshListView.IOnRefreshListener{
+public class MarketFragment extends BtcMainBaseFragment implements RefreshListView.IOnRefreshListener{
 
     private static final int REFRESH_DATA = 0x0001;
 
@@ -34,15 +33,32 @@ public class MarketFragment extends BaseFragment implements RefreshListView.IOnR
 
     private ConinMarketManager mMarketManager;
     private Handler mHandler;
-
     public MarketFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public   void onTabSelected(){
+        super.onTabSelected();
+        log.i("MarketFragment onTabSelected");
+        updateTimeToTitle();
+    }
+
+    @Override
+    public  void onTabUnselected(){
+        super.onTabUnselected();
+    }
+
+    @Override
+    public  void onTabReselected(){
+        super.onTabReselected();
     }
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         mContext = activity;
+
     }
 
 
@@ -67,12 +83,8 @@ public class MarketFragment extends BaseFragment implements RefreshListView.IOnR
     @Override
     public void onResume() {
         super.onResume();
-
-        boolean ret = CommonUtil.isNetworkConnect(mContext);
-        if (!ret){
-            CommonUtil.showToast(R.string.toast_net_error, mContext);
-            return ;
-        }
+        log.i("MarketFragment onResume");
+        updateTimeToTitle();
     }
 
     @Override
@@ -118,11 +130,7 @@ public class MarketFragment extends BaseFragment implements RefreshListView.IOnR
 
         mMarketManager.registerHandler(mHandler, REFRESH_DATA);
 
-        long time = mMarketManager.getUpdateTime();
-        if (time != 0){
-            String value = TimeUtil.getTimeShort(time);
-        //    mTvTime.setText(value);
-        }
+
 
     }
 
@@ -132,8 +140,19 @@ public class MarketFragment extends BaseFragment implements RefreshListView.IOnR
         mListView.onRefreshComplete();
         long time = mMarketManager.getUpdateTime();
         String value = TimeUtil.getTimeShort(time);
-  //      mTvTime.setText(value);
 
+
+        updateTimeToTitle();
+
+    }
+
+    private void updateTimeToTitle(){
+        if (isEnter){
+            long time = mMarketManager.getUpdateTime();
+            String value = TimeUtil.getTimeShort(time);
+            log.i("updateTimeToTitle = " + value);
+            setToolbarTitle(value);
+        }
     }
 
 
