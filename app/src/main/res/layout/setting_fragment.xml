@@ -73,9 +73,8 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
+          <!--  <LinearLayout
                 style="@style/leba_bg_layout">
-                <!--  帮助	-->
                 <LinearLayout
                     android:id="@+id/ll_help"
                     style="@style/leba_bg_top_layout">
@@ -85,7 +84,6 @@
 
                 <View android:background="@drawable/leba_shape_line" android:layout_width="fill_parent" android:layout_height="1.0px" />
 
-                <!--  检查更新	-->
                 <LinearLayout
                     android:id="@+id/ll_checkupdate"
                     style="@style/leba_bg_mid_layout">
@@ -95,15 +93,13 @@
 
                 <View android:background="@drawable/leba_shape_line" android:layout_width="fill_parent" android:layout_height="1.0px" />
 
-
-                <!-- 关于  -->
                 <LinearLayout
                     android:id="@+id/ll_about"
                     style="@style/leba_bg_bottom_layout">
                     <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="@string/txt_about" android:layout_weight="1.0" />
                     <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:src="@drawable/setting_arrow"/>
                 </LinearLayout>
-            </LinearLayout>
+            </LinearLayout>-->
 
 
         </LinearLayout>

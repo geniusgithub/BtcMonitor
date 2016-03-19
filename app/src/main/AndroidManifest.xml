@@ -137,8 +137,8 @@
                   android:theme="@style/ActivityBaseTheme" >
         </activity>
         
-         <activity android:name=".activity.setting.WarningActivity" 
-               android:theme="@android:style/Theme.NoTitleBar">
+         <activity android:name=".activity.setting.WarningActivity"
+                   android:theme="@style/ActivityBaseTheme" >
 <!--               <intent-filter>  -->
 <!--                 <action android:name="android.intent.action.MAIN" /> -->
 <!--                 <category android:name="android.intent.category.LAUNCHER" /> -->

@@ -12,8 +12,6 @@ import android.widget.TextView;
 
 import com.geniusgithub.bcoinmonitor.MonitorApplication;
 import com.geniusgithub.bcoinmonitor.R;
-import com.geniusgithub.bcoinmonitor.activity.setting.AboutActivity;
-import com.geniusgithub.bcoinmonitor.activity.setting.HelpActivity;
 import com.geniusgithub.bcoinmonitor.activity.setting.WarningActivity;
 import com.geniusgithub.bcoinmonitor.datacenter.ConinDetailManager;
 import com.geniusgithub.bcoinmonitor.datacenter.ConinMarketManager;
@@ -21,7 +19,6 @@ import com.geniusgithub.bcoinmonitor.datastore.LocalConfigSharePreference;
 import com.geniusgithub.bcoinmonitor.factory.DialogFactory;
 import com.geniusgithub.bcoinmonitor.model.IBCointType;
 import com.geniusgithub.bcoinmonitor.util.CommonLog;
-import com.geniusgithub.bcoinmonitor.util.CommonUtil;
 import com.geniusgithub.bcoinmonitor.util.LogFactory;
 
 
@@ -35,9 +32,7 @@ public class SettingFragment extends BaseFragment implements View.OnClickListene
     private View ll_noteView;
     private View ll_warnView;
 
-    private View ll_helpView;
-    private View ll_checkUpdateView;
-    private View ll_aboutView;
+
 
     private TextView mTVMarketInterval;
     private TextView mTVDeepInterval;
@@ -112,15 +107,6 @@ public class SettingFragment extends BaseFragment implements View.OnClickListene
             case R.id.ll_warning:
                 onWarning();
                 break;
-            case R.id.ll_help:
-                onHelp();
-                break;
-            case R.id.ll_checkupdate:
-                onCheckUpdate();
-                break;
-            case R.id.ll_about:
-                onAbout();
-                break;
         }
 
     }
@@ -133,18 +119,16 @@ public class SettingFragment extends BaseFragment implements View.OnClickListene
         ll_noteView = view.findViewById(R.id.ll_notice_price);
         ll_warnView = view.findViewById(R.id.ll_warning);
 
-        ll_helpView = view.findViewById(R.id.ll_help);
-        ll_checkUpdateView = view.findViewById(R.id.ll_checkupdate);
-        ll_aboutView = view.findViewById(R.id.ll_about);
+
+
 
         ll_marketView.setOnClickListener(this);
         ll_deepView.setOnClickListener(this);
         ll_noteView.setOnClickListener(this);
         ll_warnView.setOnClickListener(this);
 
-        ll_helpView.setOnClickListener(this);
-        ll_checkUpdateView.setOnClickListener(this);
-        ll_aboutView.setOnClickListener(this);
+
+
 
         mTVMarketInterval = (TextView) view.findViewById(R.id.tv_market_interval);
         mTVDeepInterval = (TextView) view.findViewById(R.id.tv_deep_interval);
@@ -336,7 +320,7 @@ public class SettingFragment extends BaseFragment implements View.OnClickListene
         startActivity(intent);
     }
 
-    private void onHelp(){
+ /*   private void onHelp(){
         Intent intent = new Intent();
         intent.setClass(mContext, HelpActivity.class);
         startActivity(intent);
@@ -350,6 +334,6 @@ public class SettingFragment extends BaseFragment implements View.OnClickListene
         Intent intent = new Intent();
         intent.setClass(mContext, AboutActivity.class);
         startActivity(intent);
-    }
+    }*/
 
 }

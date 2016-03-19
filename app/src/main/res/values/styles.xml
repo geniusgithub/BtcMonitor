@@ -14,7 +14,7 @@
     <style name="ActivityBaseTheme" parent="Base.Theme.Design">
     </style>
 
-    <style name="Base.Theme.Design" parent="@style/Theme.AppCompat.NoActionBar">
+    <style name="Base.Theme.Design" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">#0fb73d</item>
         <item name="colorPrimaryDark">#0ba823</item>
         <item name="colorAccent">#FF4081</item>

@@ -1,6 +1,8 @@
 package com.geniusgithub.bcoinmonitor.activity.setting;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -19,7 +21,6 @@ import com.geniusgithub.bcoinmonitor.util.CommonUtil;
 
 public class WarningActivity extends BaseActivity  implements OnClickListener{
 
-	private Button mBtnBack;	
 	
 	private EditText mLowEditText;
 	private EditText mHightTeEditText;
@@ -46,9 +47,9 @@ public class WarningActivity extends BaseActivity  implements OnClickListener{
 	@Override
 	public void setupViews() {
 		setContentView(R.layout.warning_layout);
-		
-		mBtnBack = (Button) findViewById(R.id.btn_back);
-		mBtnBack.setOnClickListener(this);
+		initToolBar();
+
+
 		
 		mLowEditText = (EditText) findViewById(R.id.et_lowprice);
 		mHightTeEditText = (EditText) findViewById(R.id.et_highprice);
@@ -66,6 +67,13 @@ public class WarningActivity extends BaseActivity  implements OnClickListener{
 		mSpinnerPf2.setAdapter(mWarnPfAdapter);
 		
 		
+	}
+
+	private void initToolBar(){
+		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+		toolbar.setTitle("Warning");
+		toolbar.setTitleTextColor(Color.parseColor("#ffffff"));
+		setSupportActionBar(toolbar);
 	}
 
 	@Override
@@ -196,8 +204,6 @@ public class WarningActivity extends BaseActivity  implements OnClickListener{
 	@Override
 	public void onClick(View view) {
 		switch(view.getId()){
-			case R.id.btn_back:
-				finish();
 				break;
 			case R.id.btn_save:
 				save();

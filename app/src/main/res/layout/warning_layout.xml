@@ -5,17 +5,13 @@
     android:layout_height="fill_parent" 
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
-  
-    <RelativeLayout android:background="@drawable/top_bar_bg" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="fill_parent" android:layout_height="40dp">
-   		<Button
-	        android:id="@+id/btn_back"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_centerVertical="true"
-	        android:textColor="#ffffff" 
-	        android:background="@drawable/selector_btn_back"/>
-   		<TextView android:textSize="18sp" android:textColor="@android:color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/txt_warning" android:layout_centerInParent="true"/>
-	</RelativeLayout>
+
+	<android.support.v7.widget.Toolbar
+		android:id="@+id/toolbar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="?attr/colorPrimary"
+		android:minHeight="?attr/actionBarSize"/>
 
     <LinearLayout 
     android:layout_width="fill_parent" 
