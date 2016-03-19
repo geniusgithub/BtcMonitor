@@ -1,24 +1,25 @@
 package com.geniusgithub.bcoinmonitor.activity;
 
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
 import com.geniusgithub.bcoinmonitor.MonitorApplication;
 
-import android.app.Activity;
-import android.os.Bundle;
+public abstract class BaseActivity extends AppCompatActivity{
 
-public abstract class BaseActivity extends Activity{
+
 
 	public abstract void setupViews();
 	public abstract void initData();
-	
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		MonitorApplication.onCatchError(this);
-		setupViews();
-		initData();
+
+		setupViews();;
+		initData();;
 	}
-	
+
 	@Override
 	protected void onPause() {
 		super.onPause();

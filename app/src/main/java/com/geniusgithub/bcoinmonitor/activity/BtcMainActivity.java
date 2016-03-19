@@ -1,15 +1,16 @@
 package com.geniusgithub.bcoinmonitor.activity;
 
+
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -27,11 +28,11 @@ import com.geniusgithub.bcoinmonitor.datacenter.ConinMarketManager;
 import com.geniusgithub.bcoinmonitor.fragment.DeepFragment;
 import com.geniusgithub.bcoinmonitor.fragment.MarketFragment;
 import com.geniusgithub.bcoinmonitor.fragment.MeFragment;
-import com.geniusgithub.bcoinmonitor.fragment.SettingFragment;
 import com.geniusgithub.bcoinmonitor.util.CommonLog;
 import com.geniusgithub.bcoinmonitor.util.LogFactory;
 
 import java.util.ArrayList;
+
 
 public class BtcMainActivity extends AppCompatActivity {
     private static final CommonLog log = LogFactory.createLog();
@@ -40,7 +41,6 @@ public class BtcMainActivity extends AppCompatActivity {
     private Resources mResource;
     private ViewPager mViewPager;
     private TabLayout mTabLayout;
-
 
     private TabLayout.Tab mTabMarket;
     private TabLayout.Tab mTabDeep;
@@ -136,7 +136,7 @@ public class BtcMainActivity extends AppCompatActivity {
         mTabLayout = (TabLayout) findViewById(R.id.tabs);
         mTabLayout.setTabMode(TabLayout.MODE_FIXED);
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
-        MainFragmentAdapter adapter = new MainFragmentAdapter(getSupportFragmentManager(), this, mTabLayout);
+        MainFragmentAdapter adapter = new MainFragmentAdapter(getFragmentManager(), this, mTabLayout);
         mViewPager.setAdapter(adapter);
         mTabLayout.setupWithViewPager(mViewPager);
         mTabLayout.setTabsFromPagerAdapter(adapter);
@@ -170,7 +170,7 @@ public class BtcMainActivity extends AppCompatActivity {
 
 
 
-    private class MainFragmentAdapter extends FragmentPagerAdapter{
+    private class MainFragmentAdapter extends FragmentPagerAdapter {
 
         private final ArrayList<TabInfo> mTabs = new ArrayList<TabInfo>(3);
         private final TabLayout mTabLayout;

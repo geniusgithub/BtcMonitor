@@ -2,7 +2,6 @@ package com.geniusgithub.bcoinmonitor.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +17,7 @@ import com.geniusgithub.bcoinmonitor.util.CommonLog;
 import com.geniusgithub.bcoinmonitor.util.LogFactory;
 import com.geniusgithub.bcoinmonitor.widget.RefreshListView;
 
-public class DetailFragment extends Fragment implements RefreshListView.IOnRefreshListener{
+public class DetailFragment extends BaseFragment implements RefreshListView.IOnRefreshListener{
 
 	private static final CommonLog log = LogFactory.createLog();
 	private static final int REFRESH_DETAIL_DATA = 0x0001;

@@ -28,7 +28,7 @@
                 style="@style/leba_bg_layout">
                 <!--  分享	-->
                 <LinearLayout
-                    android:id="@+id/ll_market"
+                    android:id="@+id/ll_shapre"
                     style="@style/leba_bg_top_layout">
                     <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="@string/txt_share" android:layout_weight="1.0" />
                     <TextView android:id="@+id/tv_market_interval" android:textColor="@color/grey" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" />
@@ -38,7 +38,7 @@
 
                 <!--  扫一扫	-->
                 <LinearLayout
-                    android:id="@+id/ll_warning"
+                    android:id="@+id/ll_scan"
                     style="@style/leba_bg_bottom_layout">
                     <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="@string/txt_scan" android:layout_weight="1.0" />
 
@@ -51,7 +51,7 @@
 
                 <!-- 设置  -->
                 <LinearLayout
-                    android:id="@+id/ll_about"
+                    android:id="@+id/ll_setting"
                     style="@style/leba_bg_single_layout">
                     <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="@string/txt_setting" android:layout_weight="1.0" />
                     <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:src="@drawable/setting_arrow"/>
@@ -63,7 +63,7 @@
 
                 <!--  意见与反馈	-->
                 <LinearLayout
-                    android:id="@+id/ll_market"
+                    android:id="@+id/ll_advise"
                     style="@style/leba_bg_top_layout">
                     <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="@string/txt_advise" android:layout_weight="1.0" />
                     <TextView android:id="@+id/tv_market_interval" android:textColor="@color/grey" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" />

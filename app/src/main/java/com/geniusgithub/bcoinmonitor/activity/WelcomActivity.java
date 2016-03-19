@@ -28,7 +28,8 @@ public class WelcomActivity extends BaseActivity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-	
+
+
 	}
 	
 	@Override
@@ -99,6 +100,7 @@ public class WelcomActivity extends BaseActivity{
 
 
 	private void goMainActivity(){
+		log.i("goMainActivity");
 		Intent intent = new Intent();
 		intent.setClass(this, BtcMainActivity.class);
 		startActivity(intent);
