@@ -37,21 +37,10 @@ public class MarketFragment extends BtcMainBaseFragment implements RefreshListVi
         // Required empty public constructor
     }
 
-    @Override
-    public   void onTabSelected(){
-        super.onTabSelected();
-        log.i("MarketFragment onTabSelected");
-        updateTimeToTitle();
-    }
-
-    @Override
-    public  void onTabUnselected(){
-        super.onTabUnselected();
-    }
-
-    @Override
-    public  void onTabReselected(){
-        super.onTabReselected();
+    public  String  getToolbarTitle(){
+        long time = mMarketManager.getUpdateTime();
+        String value = TimeUtil.getTimeShort(time);
+        return "更新于:"+value;
     }
 
     @Override
@@ -84,7 +73,6 @@ public class MarketFragment extends BtcMainBaseFragment implements RefreshListVi
     public void onResume() {
         super.onResume();
         log.i("MarketFragment onResume");
-        updateTimeToTitle();
     }
 
     @Override
@@ -138,20 +126,12 @@ public class MarketFragment extends BtcMainBaseFragment implements RefreshListVi
         List<ConinMarketEx> list = mMarketManager.getMaList();
         adapter.refreshData(list);
         mListView.onRefreshComplete();
-        long time = mMarketManager.getUpdateTime();
-        String value = TimeUtil.getTimeShort(time);
 
 
-        updateTimeToTitle();
-
-    }
-
-    private void updateTimeToTitle(){
         if (isEnter){
             long time = mMarketManager.getUpdateTime();
             String value = TimeUtil.getTimeShort(time);
-            log.i("updateTimeToTitle = " + value);
-            setToolbarTitle(value);
+            setToolbarTitle(getToolbarTitle());
         }
     }
 

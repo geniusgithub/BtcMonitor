@@ -28,6 +28,7 @@ import com.geniusgithub.bcoinmonitor.fragment.MarketFragment;
 import com.geniusgithub.bcoinmonitor.fragment.MeFragment;
 import com.geniusgithub.bcoinmonitor.util.CommonLog;
 import com.geniusgithub.bcoinmonitor.util.LogFactory;
+import com.geniusgithub.bcoinmonitor.util.TimeUtil;
 
 import java.util.ArrayList;
 
@@ -93,6 +94,10 @@ public class BtcMainActivity extends AppCompatActivity implements  BtcMainBaseFr
 
         mDetailManager = ConinDetailManager.getInstance(MonitorApplication.getInstance());
         mDetailManager.startRequestTimer();
+
+        long time = mMarketManager.getUpdateTime();
+        String value = TimeUtil.getTimeShort(time);
+        setToolbarTitle("更新于:"+value);
     }
 
 
@@ -129,6 +134,8 @@ public class BtcMainActivity extends AppCompatActivity implements  BtcMainBaseFr
 
         mTabLayout.getTabAt(0).select();
         mTabLayout.getTabAt(0).getCustomView().setSelected(true);
+
+
     }
 
     private View newTabView(String title, Drawable drawable){
@@ -255,6 +262,7 @@ public class BtcMainActivity extends AppCompatActivity implements  BtcMainBaseFr
             log.i("onTabSelected pos = " + tab.getPosition());
             mViewPager.setCurrentItem(tab.getPosition());
             BtcMainBaseFragment fragment = (BtcMainBaseFragment)mainFragmentAdapter.getItem(tab.getPosition());
+            setToolbarTitle(fragment.getToolbarTitle());
             fragment.onTabSelected();
         }
 

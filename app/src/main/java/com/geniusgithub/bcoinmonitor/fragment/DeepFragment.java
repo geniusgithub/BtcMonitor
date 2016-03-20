@@ -63,28 +63,10 @@ public class DeepFragment extends BtcMainBaseFragment implements ViewPager.OnPag
         // Required empty public constructor
     }
 
-    private void updateToolbarTitle(){
-        if (isEnter){
-            setToolbarTitle("DEEP");
-        }
+    public  String  getToolbarTitle(){
+        return "DEEP";
     }
 
-    @Override
-    public   void onTabSelected(){
-        super.onTabSelected();
-        log.i("DeepFragment onTabSelected");
-        updateToolbarTitle();
-    }
-
-    @Override
-    public  void onTabUnselected(){
-        super.onTabUnselected();
-    }
-
-    @Override
-    public  void onTabReselected(){
-        super.onTabReselected();
-    }
 
     @Override
     public void onAttach(Activity activity) {
@@ -113,7 +95,6 @@ public class DeepFragment extends BtcMainBaseFragment implements ViewPager.OnPag
     public void onResume() {
         super.onResume();
 
-        updateToolbarTitle();
     }
 
     @Override

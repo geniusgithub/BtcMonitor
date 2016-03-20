@@ -19,6 +19,8 @@ public abstract  class BtcMainBaseFragment extends  BaseFragment {
 
     }
 
+    public abstract String  getToolbarTitle();
+
     protected boolean isEnter = false;
     public  void onTabSelected(){
         isEnter = true;
