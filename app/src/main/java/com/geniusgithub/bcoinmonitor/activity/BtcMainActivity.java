@@ -280,4 +280,10 @@ public class BtcMainActivity extends AppCompatActivity implements  BtcMainBaseFr
         }
 
     };
+
+
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+    }
 }

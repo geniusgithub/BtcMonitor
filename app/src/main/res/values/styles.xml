@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-
-    <style name="AppBaseTheme" parent="Base.Theme.Design">
-    </style>
-
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
+    <style name="AppBaseTheme" parent="Base.Theme.Design">
+    </style>
 
     <style name="ActivityBaseTheme" parent="Base.Theme.Design">
+    </style>
+
+    <style name="Theme.AppStartLoad" parent="android:Theme.Black.NoTitleBar.Fullscreen">
+        <item name="android:windowBackground">@drawable/load_bg</item>
+        <item name="android:windowNoTitle">true</item>
     </style>
 
     <style name="Base.Theme.Design" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/orange</item>
         <item name="colorPrimaryDark">@color/darkorange</item>
         <item name="colorAccent">@color/orange</item>
-       <item name="android:windowBackground">@color/window_background</item>
+        <item name="android:windowBackground">@color/window_background</item>
+        <item name="android:windowContentOverlay">@null</item>
     </style>
 
 
