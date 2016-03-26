@@ -17,12 +17,18 @@
         <item name="android:windowNoTitle">true</item>
     </style>
 
+<!--    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="actionMenuTextColor">@color/red</item> &lt;!&ndash;  敲定颜色&ndash;&gt;
+        <item name="android:textSize">18sp</item> &lt;!&ndash;  搞掂字体大小&ndash;&gt;
+    </style>-->
+
+
     <style name="Base.Theme.Design" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/orange</item>
         <item name="colorPrimaryDark">@color/darkorange</item>
         <item name="colorAccent">@color/orange</item>
         <item name="android:windowBackground">@color/window_background</item>
-        <item name="android:windowContentOverlay">@null</item>
+<!--        <item name="android:textColorPrimary">@color/white</item>-->
     </style>
 
 

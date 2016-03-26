@@ -10,6 +10,7 @@ public abstract  class BtcMainBaseFragment extends  BaseFragment {
     protected IToolbarEvent mToolbarEvent;
     public static interface IToolbarEvent{
         public void setToolbarTitle(String title);
+    //    public void setToolbarMenu(String menu);
     }
 
     @Override
@@ -20,7 +21,9 @@ public abstract  class BtcMainBaseFragment extends  BaseFragment {
     }
 
     public abstract String  getToolbarTitle();
-
+/*    public  String  getToolbarMenu(){
+        return "";
+    }*/
     protected boolean isEnter = false;
     public  void onTabSelected(){
         isEnter = true;
@@ -39,4 +42,12 @@ public abstract  class BtcMainBaseFragment extends  BaseFragment {
             log.e("mToolbarEvent = null!!!");
         }
     }
+
+  /*  public void setToolbarMenu(String menu){
+        if (mToolbarEvent != null){
+            mToolbarEvent.setToolbarMenu(menu);
+        }else{
+            log.e("mToolbarEvent = null!!!");
+        }
+    }*/
 }

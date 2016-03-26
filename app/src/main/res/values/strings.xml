@@ -44,6 +44,9 @@
     <string name="menu_exitprocess">退出程序</string>
     <string name="menu_runinbackground">后台运行</string>
 
+    <string name="menu_action_filter">筛选</string>
+
+
     <string name="pf_btcchina">BtcChina</string>
     <string name="pf_okcoin">OkCoin</string>
     <string name="pf_firecoin">火币网</string>

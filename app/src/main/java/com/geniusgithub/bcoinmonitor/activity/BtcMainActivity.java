@@ -47,7 +47,8 @@ public class BtcMainActivity extends AppCompatActivity implements  BtcMainBaseFr
 
     private MainFragmentAdapter mainFragmentAdapter;
     private Toolbar mToolbar;
-    private TextView mToolbarTitle;
+/*    private TextView mToolbarTitle;
+    private TextView mToolbarMenu;*/
     private ConinMarketManager mMarketManager;
     private ConinDetailManager mDetailManager;
 
@@ -75,9 +76,16 @@ public class BtcMainActivity extends AppCompatActivity implements  BtcMainBaseFr
         MonitorApplication.onResume(this);
     }
 
+    @Override
     public void setToolbarTitle(String title){
-        mToolbarTitle.setText(title);
+    //    mToolbarTitle.setText(title);
+        mToolbar.setTitle(title);
     }
+
+ /*   @Override
+    public void setToolbarMenu(String menu){
+        mToolbarMenu.setText(menu);
+    }*/
 
     private void initView(){
         initToolBar();
@@ -104,7 +112,8 @@ public class BtcMainActivity extends AppCompatActivity implements  BtcMainBaseFr
     private void initToolBar(){
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
-        mToolbarTitle = (TextView)mToolbar.findViewById(R.id.tv_toolbartitle);
+/*        mToolbarTitle = (TextView)mToolbar.findViewById(R.id.tv_toolbartitle);
+        mToolbarMenu = (TextView)mToolbar.findViewById(R.id.tv_toolbarmenu);*/
     }
 
 
@@ -263,6 +272,7 @@ public class BtcMainActivity extends AppCompatActivity implements  BtcMainBaseFr
             mViewPager.setCurrentItem(tab.getPosition());
             BtcMainBaseFragment fragment = (BtcMainBaseFragment)mainFragmentAdapter.getItem(tab.getPosition());
             setToolbarTitle(fragment.getToolbarTitle());
+        //    setToolbarMenu(fragment.getToolbarMenu());
             fragment.onTabSelected();
         }
 

@@ -1,10 +1,5 @@
 package com.geniusgithub.bcoinmonitor.datacenter;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.json.JSONException;
-
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
@@ -21,6 +16,11 @@ import com.geniusgithub.bcoinmonitor.network.ServerUrlBuilder;
 import com.geniusgithub.bcoinmonitor.timer.BaseTimer;
 import com.geniusgithub.bcoinmonitor.util.CommonLog;
 import com.geniusgithub.bcoinmonitor.util.LogFactory;
+
+import org.json.JSONException;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class ConinDetailManager implements IRequestContentCallback {
 
@@ -50,7 +50,7 @@ public class ConinDetailManager implements IRequestContentCallback {
 	}
 	
 	private ConinDetailManager(Context context){
-		mContext = context;
+		mContext = context.getApplicationContext();
 		init();
 	}
 	
@@ -79,7 +79,11 @@ public class ConinDetailManager implements IRequestContentCallback {
 	public void setDetailType(int type){
 		mCurPlatiformType = type;
 	}
-	
+
+	public int getDetailType(){
+		return mCurPlatiformType;
+	}
+
 	public ConinDetail getConinDetail(int type){
 		return mConinMap.get(type);
 	}

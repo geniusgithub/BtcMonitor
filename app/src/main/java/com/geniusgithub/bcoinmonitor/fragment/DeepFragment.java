@@ -7,6 +7,9 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioGroup;
@@ -21,13 +24,6 @@ import com.geniusgithub.bcoinmonitor.model.IBCointType;
 import com.geniusgithub.bcoinmonitor.util.CommonLog;
 import com.geniusgithub.bcoinmonitor.util.LogFactory;
 import com.geniusgithub.bcoinmonitor.util.TimeUtil;
-import com.geniusgithub.bcoinmonitor.widget.spinner.AbstractSpinerAdapter;
-import com.geniusgithub.bcoinmonitor.widget.spinner.CustemObject;
-import com.geniusgithub.bcoinmonitor.widget.spinner.CustemSpinerAdapter;
-import com.geniusgithub.bcoinmonitor.widget.spinner.SpinerPopWindow;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class DeepFragment extends BtcMainBaseFragment implements ViewPager.OnPageChangeListener, View.OnClickListener {
@@ -46,9 +42,9 @@ public class DeepFragment extends BtcMainBaseFragment implements ViewPager.OnPag
 
     private View mTitleLayoutView;
     private TextView mTVPlatiform;
-    private List<CustemObject> platiformNameList = new ArrayList<CustemObject>();
-    private AbstractSpinerAdapter mPlatiformAdapter;
-    private SpinerPopWindow mSpinerPopWindow;
+   // private List<CustemObject> platiformNameList = new ArrayList<CustemObject>();
+   // private AbstractSpinerAdapter mPlatiformAdapter;
+   // private SpinerPopWindow mSpinerPopWindow;
 
 
     private DetailFragment mDetailFragment;
@@ -63,10 +59,19 @@ public class DeepFragment extends BtcMainBaseFragment implements ViewPager.OnPag
         // Required empty public constructor
     }
 
+    @Override
     public  String  getToolbarTitle(){
-        return "DEEP";
+        int type = ConinDetailManager.getInstance(mContext).getDetailType();
+        String value = getPlatformName(type);
+        return value;
     }
 
+/*    @Override
+    public  String  getToolbarMenu(){
+        int type = ConinDetailManager.getInstance(mContext).getDetailType();
+        String value = getPlatformName(type);
+        return value;
+    }*/
 
     @Override
     public void onAttach(Activity activity) {
@@ -89,6 +94,7 @@ public class DeepFragment extends BtcMainBaseFragment implements ViewPager.OnPag
 
         setupViews(mRootView);
         initData();
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -109,6 +115,69 @@ public class DeepFragment extends BtcMainBaseFragment implements ViewPager.OnPag
         super.onDetach();
 
     }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+
+        inflater.inflate(R.menu.deep_options_menu, menu);
+    }
+
+    private MenuItem mFilterItem;
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        super.onPrepareOptionsMenu(menu);
+
+        mFilterItem = menu.findItem(R.id.platform_filter);
+        if (mFilterItem == null){
+            return ;
+        }
+
+    }
+
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_btcchina:
+                updateMenuSelect(IBCointType.BTC_CHINA);
+                break;
+            case R.id.menu_okcoin:
+                updateMenuSelect(IBCointType.OK_COIN);
+                break;
+            case R.id.menu_firecoin:
+                updateMenuSelect(IBCointType.FIRE_COIN);
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    private void updateMenuSelect(int type){
+        setToolbarTitle(getPlatformName(type));
+        refreshAndRequestData(type);
+    }
+
+    private String getPlatformName(int type){
+        String value = getResources().getString(R.string.pf_btcchina);
+        switch (type){
+            case IBCointType.BTC_CHINA:
+                value = getResources().getString(R.string.pf_btcchina);
+                break;
+            case IBCointType.OK_COIN:
+                value = getResources().getString(R.string.pf_okcoin);
+                break;
+            case IBCointType.FIRE_COIN:
+                value = getResources().getString(R.string.pf_firecoin);
+                break;
+
+        }
+        return value;
+    }
+
+
 
     @Override
     public void onPageScrollStateChanged(int arg0) {
@@ -139,9 +208,7 @@ public class DeepFragment extends BtcMainBaseFragment implements ViewPager.OnPag
     @Override
     public void onClick(View view) {
         switch(view.getId()){
-            case R.id.title_layout:
-                showSpinWindow();
-                break;
+
         }
     }
     public void setupViews(View view) {
@@ -158,7 +225,7 @@ public class DeepFragment extends BtcMainBaseFragment implements ViewPager.OnPag
 
     public void initData() {
 
-        String[] names = getResources().getStringArray(R.array.platiform_name);
+     /*   String[] names = getResources().getStringArray(R.array.platiform_name);
         for(int i = 0; i < names.length; i++){
             CustemObject object = new CustemObject();
             object.data = names[i];
@@ -191,7 +258,7 @@ public class DeepFragment extends BtcMainBaseFragment implements ViewPager.OnPag
                 }
             }
 
-        });
+        });*/
 
         mDetailFragment = new DetailFragment();
         mTradeFragment = new TradeFragment();
@@ -287,11 +354,13 @@ public class DeepFragment extends BtcMainBaseFragment implements ViewPager.OnPag
         mTradeFragment.updateListData();
     }
 
+/*
     private void showSpinWindow(){
 
         mSpinerPopWindow.setWidth(mTitleLayoutView.getWidth());
         mSpinerPopWindow.showAsDropDown(mTitleLayoutView);
     }
+*/
 
 
 
