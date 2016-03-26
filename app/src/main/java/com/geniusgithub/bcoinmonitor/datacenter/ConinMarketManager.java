@@ -1,10 +1,5 @@
 package com.geniusgithub.bcoinmonitor.datacenter;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.json.JSONException;
-
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
@@ -21,6 +16,11 @@ import com.geniusgithub.bcoinmonitor.network.ServerUrlBuilder;
 import com.geniusgithub.bcoinmonitor.timer.BaseTimer;
 import com.geniusgithub.bcoinmonitor.util.CommonLog;
 import com.geniusgithub.bcoinmonitor.util.LogFactory;
+
+import org.json.JSONException;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ConinMarketManager implements IRequestContentCallback {
 
@@ -88,7 +88,24 @@ public class ConinMarketManager implements IRequestContentCallback {
 	public List<ConinMarketEx> getMaList(){
 		return mMaList;
 	}
-	
+
+	public ConinMarketEx getCoinMarket(int type){
+		int pos = 0;
+		switch(type){
+			case IBCointType.BTC_CHINA:
+				pos = 0;
+				break;
+			case IBCointType.OK_COIN:
+				pos = 1;
+				break;
+			case IBCointType.FIRE_COIN:
+				pos = 2;
+				break;
+		}
+
+		ConinMarketEx object = mMaList.get(pos);
+		return object;
+	}
 	public int getLastPrice(int type){
 		int pos = 0;
 		switch(type){
@@ -195,12 +212,11 @@ public class ConinMarketManager implements IRequestContentCallback {
 	
 	private void onMarketResult(String content, int platiformType){
 
-		
 		PublicType.ConinMarket market = new PublicType.ConinMarket();
 		try {
 			market.parseJson(content);
 			String showString = market.getShowString();
-		//	log.e("platiformType = " + platiformType + ", onMarketResult -->\n" + showString);
+			log.e("platiformType = " + platiformType + ", onMarketResult -->\n" + showString);
 			
 			setMaData(platiformType, market);
 			

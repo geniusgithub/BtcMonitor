@@ -6,6 +6,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -111,6 +112,7 @@ public class BtcMainActivity extends AppCompatActivity implements  BtcMainBaseFr
 
     private void initToolBar(){
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mToolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(mToolbar);
 /*        mToolbarTitle = (TextView)mToolbar.findViewById(R.id.tv_toolbartitle);
         mToolbarMenu = (TextView)mToolbar.findViewById(R.id.tv_toolbarmenu);*/

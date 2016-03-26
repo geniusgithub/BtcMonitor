@@ -1,16 +1,16 @@
 package com.geniusgithub.bcoinmonitor.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.geniusgithub.bcoinmonitor.util.CommonLog;
+import com.geniusgithub.bcoinmonitor.util.LogFactory;
+import com.geniusgithub.bcoinmonitor.util.StringUtil;
+import com.geniusgithub.bcoinmonitor.util.TimeUtil;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.geniusgithub.bcoinmonitor.util.CommonLog;
-import com.geniusgithub.bcoinmonitor.util.LogFactory;
-import com.geniusgithub.bcoinmonitor.util.StringUtil;
-import com.geniusgithub.bcoinmonitor.util.TimeUtil;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PublicType {
 
@@ -30,13 +30,15 @@ public class PublicType {
 		public final static String KEY_SELL = "sell";
 		public final static String KEY_LAST = "last";
 		public final static String KEY_VOL = "vol";
-	
+		public final static String KEY_DATE = "date";
+
 		public String mHigh = "";
 		public String mLow = "";
 		public String mBuy = "";
 		public String mSell = "";
 		public String mLast = "";
 		public String mVol = "";
+		public long mDate = 0;
 
 		@Override
 		public boolean parseJson(String content) throws JSONException {
@@ -50,6 +52,7 @@ public class PublicType {
 			mSell = object.getString(KEY_SELL);
 			mLast = object.getString(KEY_LAST);
 			mVol = object.getString(KEY_VOL);
+			mDate = object.getLong(KEY_DATE);
 			
 			return true;
 		}
@@ -65,6 +68,7 @@ public class PublicType {
 			stringBuffer.append("mSell = " + mSell + "\n");
 			stringBuffer.append("mLast = " + mLast + "\n");
 			stringBuffer.append("mVol = " + mVol + "\n");
+			stringBuffer.append("mDate = " + mDate + "\n");
 			stringBuffer.append("---------------------------");
 			
 			return stringBuffer.toString();

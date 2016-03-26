@@ -8,6 +8,15 @@
     <string name="main_setting">设置</string>
     <string name="main_more">更多</string>
 
+    <string name="txt_close">关闭</string>
+    <string name="txt_market_lastbusiness">最近成交价: </string>
+    <string name="txt_market_buyone">买一价: </string>
+    <string name="txt_market_sellone">卖一价: </string>
+    <string name="txt_market_high">最高价: </string>
+    <string name="txt_market_low">最低价: </string>
+    <string name="txt_market_businesscount">成交量: </string>
+    <string name="txt_market_updatetime">更新时间: </string>
+
     <string name="txt_refresh">更新于 :</string>
     <string name="txt_platform">交易平台</string>
     <string name="txt_lastbusiness">最近成交价 :</string>

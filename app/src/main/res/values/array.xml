@@ -4,8 +4,17 @@
         <item>BtcChina</item>
         <item>OkCoin</item>
         <item>火币网</item>
-    </string-array>   
-    
+    </string-array>
+
+
+    <string-array name="menuoption_name">
+        <item>价格预警</item>
+        <item>价格详情</item>
+        <item>打开网站</item>
+    </string-array>
+
+
+
     <string-array name="string_refresh_items">
         <item>20秒</item>
         <item>30秒</item>
