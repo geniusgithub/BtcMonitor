@@ -32,6 +32,11 @@
     </style>
 
 
+    <style name="ExitButtonTheme">
+        <item name="android:colorButtonNormal">@color/firebrick</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20dp</item>
+    </style>
 
     <style name="tab_item_text_style">
         <item name="android:textSize">12.0dip</item>

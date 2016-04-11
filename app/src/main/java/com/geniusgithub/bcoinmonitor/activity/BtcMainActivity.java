@@ -54,7 +54,7 @@ public class BtcMainActivity extends AppCompatActivity implements  BtcMainBaseFr
     private ConinDetailManager mDetailManager;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+         protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.btc_main_layout);
         mContext = this;
