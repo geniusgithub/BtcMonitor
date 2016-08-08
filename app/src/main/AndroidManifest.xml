@@ -3,11 +3,10 @@
 
 
 
-
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <!--    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.READ_CALL_LOG"/>
     <uses-permission android:name="android.permission.WRITE_CALL_LOG"/>-->
-<!--    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>-->
     <!--     <uses-permission android:name="android.permission.ADD_VOICEMAIL"/> -->
     <!--     <uses-permission android:name="android.permission.USE_SIP"/> -->
     <!-- 	 <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/> -->
@@ -66,8 +65,11 @@
         
         <meta-data android:name="TD_APP_ID" android:value="91E8DD383DD18C6582A19AF3919E7E26" /> 
         <meta-data android:name="TD_CHANNEL_ID" android:value="91.com" />
-        
-        
+
+        <meta-data android:name="UMENG_APPKEY" android:value="57a837d3e0f55a2a4300420b"/>
+        <meta-data android:name="UMENG_CHANNEL"  android:value="91.com"/>
+
+
         <service android:name=".BackgroundService" android:enabled="true">
 		</service>
 		

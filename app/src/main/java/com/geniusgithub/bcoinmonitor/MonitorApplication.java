@@ -21,7 +21,7 @@ import com.geniusgithub.bcoinmonitor.util.CommonLog;
 import com.geniusgithub.bcoinmonitor.util.LogFactory;
 import com.geniusgithub.bcoinmonitor.util.TipHelper;
 import com.tendcloud.tenddata.TCAgent;
-
+import com.umeng.analytics.MobclickAgent;
 import java.util.HashMap;
 
 
@@ -62,6 +62,9 @@ public class MonitorApplication extends Application implements IPriceObser, Itat
 		
 		  TCAgent.init(this);
 		  TCAgent.setReportUncaughtExceptions(true);
+
+		MobclickAgent.setDebugMode(true);
+
 		mConinMarketManager = ConinMarketManager.getInstance(this);
 		mConinMarketManager.registerPriceObser(this);
 		
@@ -250,12 +253,12 @@ public class MonitorApplication extends Application implements IPriceObser, Itat
 	}
 	
 	public static void onPause(Activity context){
-
+		MobclickAgent.onPause(context);
 		TCAgent.onPause(context);
 	}
 	
 	public static void onResume(Activity context){
-	
+		MobclickAgent.onResume(context);
 		TCAgent.onResume(context);
 	}
 	

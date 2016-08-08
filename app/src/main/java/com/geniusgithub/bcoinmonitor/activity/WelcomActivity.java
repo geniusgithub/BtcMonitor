@@ -1,7 +1,11 @@
 package com.geniusgithub.bcoinmonitor.activity;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -12,6 +16,7 @@ import com.geniusgithub.bcoinmonitor.datacenter.ConinMarketManager;
 import com.geniusgithub.bcoinmonitor.util.CommonLog;
 import com.geniusgithub.bcoinmonitor.util.CommonUtil;
 import com.geniusgithub.bcoinmonitor.util.LogFactory;
+import com.geniusgithub.bcoinmonitor.util.PermissionsUtil;
 
 public class WelcomActivity extends Activity{
 
@@ -97,10 +102,54 @@ public class WelcomActivity extends Activity{
 
 
 	private void goMainActivity(){
-		Intent intent = new Intent();
-		intent.setClass(this, BtcMainActivity.class);
-		startActivity(intent);
-		finish();
+
+		if (PermissionsUtil.hasNecessaryRequiredPermissions(this)){
+			Intent intent = new Intent();
+			intent.setClass(this, BtcMainActivity.class);
+			startActivity(intent);
+			finish();
+
+		}else{
+			requestNecessaryRequiredPermissions();
+		}
+	}
+
+
+	private final int REQUEST_PHONE_PERMISSION =  0X0001;
+	private void requestNecessaryRequiredPermissions(){
+		requestSpecialPermissions(PermissionsUtil.PHONE, REQUEST_PHONE_PERMISSION);
+	}
+
+	@TargetApi(Build.VERSION_CODES.M)
+	private void requestSpecialPermissions(String permission, int requestCode){
+		String []permissions = new String[]{permission};
+		requestPermissions(permissions, requestCode);
+	}
+
+	@Override
+	public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+
+		switch(requestCode){
+			case REQUEST_PHONE_PERMISSION:
+				doPhonePermission(grantResults);
+				break;
+			default:
+				super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+				break;
+		}
+
+	}
+
+	private void doPhonePermission(int[] grantResults){
+		if (grantResults[0] == PackageManager.PERMISSION_DENIED){
+			log.e("doPhonePermission is denied!!!" );
+			Dialog dialog = PermissionsUtil.createPermissionSettingDialog(this, "读电话权限");
+			dialog.show();
+		}else if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
+			log.i("doPhonePermission, is granted!!!" );
+			goMainActivity();
+		}
+
 	}
 
 }
